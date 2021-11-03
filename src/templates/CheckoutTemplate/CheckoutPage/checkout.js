@@ -104,7 +104,7 @@ export default function Checkout(props) {
               <div className="your-order-body border-2 rounded-md p-5">
                 <div className="grid grid-flow-col grid-cols-12 gap-2">
                   <div className="col-span-2">
-                    <img src={courseDetail?.hinhAnh} alt={courseDetail.tenKhoaHoc} />
+                    <img className="rounded-md" src={courseDetail?.hinhAnh} alt={courseDetail.tenKhoaHoc} />
                   </div>
                   <div className="pl-5 col-span-8 place-self-center justify-self-start text-lg">
                     <Link to={`/courses/detail/${courseDetail.maKhoaHoc}`}>

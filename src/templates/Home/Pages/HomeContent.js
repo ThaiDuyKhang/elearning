@@ -27,7 +27,7 @@ export default function HomeContent(props) {
             e.preventDefault();
             history.push('/courses')
           }}
-          className="bg-purple-600 hover:bg-purple-700 text-white font-semibold text-base p-5 rounded-lg transition-colors">
+          className="bg-purple-600 hover:bg-purple-700 text-white font-semibold text-base p-5 mt-8 rounded-lg transition-colors">
             Visit Courses
           </button>
         </div>

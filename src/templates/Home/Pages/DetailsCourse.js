@@ -95,18 +95,18 @@ export default function DetailsCourse(props) {
           >
             {courseDetail?.danhMucKhoaHoc?.tenDanhMucKhoaHoc}
           </p>
-          <h1 className="text-5xl font-bold">{courseDetail.tenKhoaHoc}</h1>
+          <h1 className="text-5xl font-bold mt-6" >{courseDetail.tenKhoaHoc}</h1>
         </div>
         <VideoCoursesDetail />
 
         <div className="pt-24 grid grid-flow-col grid-cols-12 gap-4">
           <div className="img_collegeLevel_home col-span-9">
-            <h2 className="text-5xl font-bold leading-tight">Course Details</h2>
+            <h2 className="text-5xl mb-10 font-bold leading-tight">Course Details</h2>
             <p className="text-xl pr-12 text-justify">{courseDetail.moTa}</p>
           </div>
           <div className="col-span-3 grid grid-flow-row row-span-2 sticky top-10 bg-white shadow-xl rounded-lg p-5">
             <div className="grid grid-flow-col grid-cols-6 grid-rows-9">
-              <div className="col-span-3">
+              <div className="col-span-3 flex flex-col gap-4 items-start justify-between">
                 <p className="text-lg font-semibold text-gray-500">Price</p>
                 <p className="text-lg font-semibold text-gray-500">
                   Instructor
@@ -121,7 +121,7 @@ export default function DetailsCourse(props) {
                 <p className="text-lg font-semibold text-gray-500">Language</p>
                 <p className="text-lg font-semibold text-gray-500">Access</p>
               </div>
-              <div className="col-span-3 place-self-end text-right">
+              <div className="col-span-3 gap-4 text-right flex flex-col items-start justify-between">
                 <p className="text-lg font-semibold text-red-500">Free</p>
                 <p className="text-lg font-semibold text-black underline">
                   {courseDetail?.nguoiTao?.hoTen}
@@ -148,7 +148,7 @@ export default function DetailsCourse(props) {
           </div>
         </div>
         <div className="related-course">
-          <h2 className="text-5xl mt-14 font-bold leading-tight">
+          <h2 className="text-5xl mt-14 mb-10 font-bold leading-tight">
             Similar Courses
           </h2>
           <div className="grid grid-cols-4 -m-4">{renderSimilarCourse()}</div>

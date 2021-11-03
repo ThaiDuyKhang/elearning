@@ -42,7 +42,7 @@ export default function Courses(props) {
                       className="courses_tab_home relative lg:mb-12 mx-5 px-6 py-12 bg-white rounded-3xl shadow-xl"
                     >
                       <div className="absolute top-0 left-0"></div>
-                      <p className="rounded-lg text-center text-purple-700 bg-indigo-100 py-2 px-3 w-fit text-xs">
+                      <p className="rounded-lg text-center mb-4 text-purple-700 bg-indigo-100 py-2 px-3 w-fit text-xs">
                         {course?.danhMucKhoaHoc?.tenDanhMucKhoaHoc}
                       </p>
                       <div className="text-center">
