@@ -121,7 +121,7 @@ export default function DetailsCourse(props) {
                 <p className="text-lg font-semibold text-gray-500">Language</p>
                 <p className="text-lg font-semibold text-gray-500">Access</p>
               </div>
-              <div className="col-span-3 gap-4 place-self-end text-right flex flex-col items-start justify-between">
+              <div className="col-span-3 gap-4 text-right flex flex-col items-end justify-between">
                 <p className="text-lg font-semibold text-red-500">Free</p>
                 <p className="text-lg font-semibold text-black underline">
                   {courseDetail?.nguoiTao?.hoTen}
