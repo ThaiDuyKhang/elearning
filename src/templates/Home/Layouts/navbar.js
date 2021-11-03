@@ -62,10 +62,11 @@ export default function Navbar({toggle}) {
         <NavLink activeClassName="active" className="nav-links p-4" to="/instructor">Instructor</NavLink>
         <NavLink activeClassName="active" className="nav-links p-4" to="/gallery">Gallery</NavLink>
         <NavLink activeClassName="active" className="nav-links p-4" to="/contact">Contact</NavLink>
-        <div className="inline-flex">
-        <Button className="signin-btn p-4" onClick={()=>{setShowModal(!showModal)}} >Sign In</Button>
+        <div className="inline-flex mx-4">
+        <button className="signin-btn px-4 py-2 text-lg  rounded-md" onClick={()=>{setShowModal(!showModal)}} >Sign In</button>
         {showModal && <SignInModal setShowModal={setShowModal} showModal={showModal}/>}
         </div>
+        <NavLink activeClassName="active" className="hover:shadow-xl font-normal text-lg signup-btn px-4 py-3 rounded-md" to="/signup">Sign Up</NavLink>
       </div>
 
     </nav>

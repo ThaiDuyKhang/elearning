@@ -53,8 +53,8 @@ export default function DetailsCourse(props) {
               <LazyLoad height={200}>
                 <img
                   alt={course?.tenKhoaHoc}
-                  className="w-full  object-cover object-center rounded-lg inline-block"
-                  style={{ maxHeight: "150px", minHeight: "150px" }}
+                  className="w-full mb-8 object-cover object-center rounded-lg inline-block "
+                  style={{ maxHeight: "150px", minHeight: "150px", border:"1px solid #eee" }}
                   src={course?.hinhAnh}
                 />
               </LazyLoad>

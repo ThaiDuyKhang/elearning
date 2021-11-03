@@ -4,6 +4,7 @@ import Lazyload from "react-lazyload";
 import CarouselHome from "../Components/Home/CarouselHome";
 import TabCoursesHome from "../Components/Home/tabCoursesHome";
 import { history } from "../../../App";
+import { NavLink } from "react-router-dom";
 
 export default function HomeContent(props) {
 
@@ -101,14 +102,15 @@ export default function HomeContent(props) {
               <br />
               Develop your skills.
             </h2>
-            <p className="text-xl leading-normal">
+            <p className="text-xl mb-12 leading-normal">
               High-definition video is video of higher resolution and quality
               than standard-definition. While there is no standardized meaning
               for high-definition, generally any video.
             </p>
-            <button className="mt-5 bg-purple-600 hover:bg-purple-700 text-white font-semibold text-base p-5 rounded-lg transition-colors">
+            <NavLink to="./signup"
+            className="mt-5 bg-purple-600 hover:bg-purple-700 hover:text-white  text-white font-semibold text-base p-5 rounded-lg transition-colors">
               Registation Now
-            </button>
+            </NavLink>
           </div>
           <div className="img_collegeLevel_home">
             <Lazyload>
@@ -132,14 +134,14 @@ export default function HomeContent(props) {
               knowledge? Join us
               <br />a Mentor
             </h2>
-            <p className="text-2xl leading-10">
+            <p className="text-2xl mb-12 leading-10">
               High-definition video is video of higher resolution and quality
               than standard-definition. While there is no standardized meaning
               for high-definition, generally any video.
             </p>
-            <button className="mt-5 bg-purple-600 hover:bg-purple-700 text-white font-semibold text-base p-5 rounded-lg transition-colors">
+            <NavLink to="./Instructor" className="mt-5 bg-purple-600 hover:bg-purple-700 hover:text-white text-white font-semibold text-base p-5 rounded-lg transition-colors">
               Career Information
-            </button>
+            </NavLink>
           </div>
         </div>
         

@@ -51,7 +51,7 @@ export default function TabCoursesHome(props) {
                           <img
                             alt={course?.tenKhoaHoc}
                             className="w-full mb-8 object-cover object-center rounded-lg inline-block"
-                            style={{ maxHeight: "150px", minHeight: "150px" }}
+                            style={{ maxHeight: "150px", minHeight: "150px", border:"1px solid #eee" }}
                             src={course?.hinhAnh}
                           />
                         </Lazyload>
