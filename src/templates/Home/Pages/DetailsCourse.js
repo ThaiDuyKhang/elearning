@@ -46,14 +46,14 @@ export default function DetailsCourse(props) {
             className="courses_tab_home relative lg:mb-12 mx-5 px-6 py-12 bg-white rounded-3xl shadow-xl"
           >
             <div className="absolute top-0 left-0"></div>
-            <p className="rounded-lg text-center text-purple-700 bg-indigo-100 py-2 px-3 w-fit text-xs">
+            <p className="rounded-lg mb-8 text-center text-purple-700 bg-indigo-100 py-2 px-3 w-fit text-xs">
               {course?.danhMucKhoaHoc?.tenDanhMucKhoaHoc}
             </p>
             <div className="text-center">
               <LazyLoad height={200}>
                 <img
                   alt={course?.tenKhoaHoc}
-                  className="w-full mb-8 object-cover object-center rounded-lg inline-block"
+                  className="w-full  object-cover object-center rounded-lg inline-block"
                   style={{ maxHeight: "150px", minHeight: "150px" }}
                   src={course?.hinhAnh}
                 />
@@ -121,7 +121,7 @@ export default function DetailsCourse(props) {
                 <p className="text-lg font-semibold text-gray-500">Language</p>
                 <p className="text-lg font-semibold text-gray-500">Access</p>
               </div>
-              <div className="col-span-3 gap-4 text-right flex flex-col items-start justify-between">
+              <div className="col-span-3 gap-4 place-self-end text-right flex flex-col items-start justify-between">
                 <p className="text-lg font-semibold text-red-500">Free</p>
                 <p className="text-lg font-semibold text-black underline">
                   {courseDetail?.nguoiTao?.hoTen}
