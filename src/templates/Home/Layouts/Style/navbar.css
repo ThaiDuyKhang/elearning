@@ -1,0 +1,85 @@
+.nav-links {
+  @apply mx-3 my-4 px-4 pt-2 pb-3 text-lg rounded-md font-semibold text-black 
+    hover:shadow-lg transition-colors duration-200;
+}
+.nav-links:hover,
+.signup-btn,
+.sub-link-menu:hover,
+.active {
+  background-color: #e96036;
+  color: white !important;
+}
+.signin-btn:hover {
+  box-shadow: 0 7px 15px rgb(0 0 0 / 20%)!important;
+}
+.signin-btn {
+  color:#fff!important;
+  border-radius: 0.375rem!important;
+  padding-left: 1rem!important;
+  padding-right: 1rem!important;
+  padding-top: 0.5rem!important;
+  padding-bottom: 0.5rem!important;
+  font-size: 1.125rem!important;
+  line-height: 1.75rem!important;
+  font-weight: 400!important;
+  border: none !important;
+  background-color: #e96036 !important;
+  height: auto !important;
+}
+.sub-link-menu {
+  @apply py-2 px-4 block text-lg text-black transition duration-200;
+}
+
+.dropdown-nav {
+  width: 200px;
+  position: absolute;
+  top: 80px;
+  list-style: none;
+  text-align: start;
+}
+
+.nav-links > ul {
+  transform: translatex(100%) scale(0);
+}
+.nav-links:hover > ul {
+  transform: translatex(101%) scale(1);
+}
+.nav-links > svg {
+  margin-left: 5px;
+  width: 16px;
+}
+
+.nav-links .group:hover .nav-links .group-hover\:scale-100 {
+  transform: scale(1);
+}
+/* .nav-links .group:hover .nav-links .group-hover\:-rotate-180 { transform: rotate(180deg) } */
+.nav-links .scale-0 {
+  transform: scale(0);
+}
+.nav-links .min-w-32 {
+  min-width: 8rem;
+}
+
+.mobile-menu {
+  @apply grid grid-rows-4 text-center items-center bg-green-500 transition duration-300 ease-in-out text-white;
+  transform-origin: top center;
+  animation: rotateX 300ms ease-in-out forwards;
+}
+.mobile-menu-hide {
+  transform-origin: top center;
+  animation: rotateX 300ms ease-in-out forwards;
+}
+
+@keyframes rotateX {
+  0% {
+    opacity: 0;
+    transform: rotateX(-90deg);
+  }
+  50% {
+    transform: rotateX(-20deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
+}

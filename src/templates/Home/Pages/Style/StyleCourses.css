@@ -1,0 +1,9 @@
+.courses--header {
+    margin-top: 90px;
+    background: url("./../../../../assets/images/header-courses-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 400px;
+  }

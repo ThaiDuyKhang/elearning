@@ -1,0 +1,91 @@
+.user-page::before{
+  content:"";
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height: 100%;
+  background:#0A023C!important;
+  z-index: -1;
+}
+.user-page{
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  margin: 180px!important;
+  /* width:80%!important; */
+  max-height: fit-content!important;
+}
+.user-page svg.logo-image{
+  width:400px!important;
+}
+
+
+.ant-modal-content {
+  border-radius: 10px !important;
+}
+.ant-modal-body{
+  padding: 24px 24px 0 24px!important;
+}
+.line-modal {
+
+  width: 1px;
+  height: 100%;
+
+  background: linear-gradient(
+    180deg,
+    rgba(10, 3, 60, 0) 0%,
+    #0a033c 51.56%,
+    rgba(10, 3, 60, 0) 100%
+  );
+}
+.google-login-btn:hover .google-login {
+border: 1px solid #fff!important;
+}
+.google-login-btn:hover {
+background-color: #E96036;
+color: #fff;
+border-color:#E96036!important;
+}
+
+.google-login-btn {
+    width: 100%;
+    border-radius: 5px;
+    padding:5px;
+    border: 1px solid #ddd;
+}
+.google-login {
+    background-color: #E96036!important;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+
+.floating-two {
+  margin-top: -44px;
+  margin-right: -2px;
+  animation-name: floating-two;
+  -webkit-animation-name: floating-two;
+  animation-duration: 3s;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+
+@-webkit-keyframes floating-two {
+  0% {
+    -webkit-transform: rotate(0deg) translateX(4px) rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(1turn) translateX(4px) rotate(-1turn);
+  }
+}
+@keyframes floating-two {
+  0% {
+    -webkit-transform: rotate(0deg) translateX(4px) rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(1turn) translateX(4px) rotate(-1turn);
+  }
+}
