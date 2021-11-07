@@ -11,8 +11,6 @@ export default function Checkout(props) {
     (state) => state.CoursesReducer.courseDetail
   );
 
-  // let { id } = props.match.params;
-
   const { Panel } = Collapse;
 
   function callback(key) {
@@ -31,7 +29,9 @@ export default function Checkout(props) {
     <Fragment>
       <div className="checkout--header w-full">
         <div className="container py-28">
-        <p className="mb-5"><BreadCrumb/></p>
+          <p className="mb-5">
+            <BreadCrumb />
+          </p>
           <h1 className="text-4xl uppercase">Checkout</h1>
         </div>
       </div>
@@ -55,6 +55,16 @@ export default function Checkout(props) {
                   <Radio value={1}>
                     <span className="text-xl">Direct payment</span>
                   </Radio>
+
+                  <Radio value={2}>
+                    <img src="/images/paypal.png" alt="paypal" width="100%" />
+                  </Radio>
+                  <Radio value={3}>
+                    <div className="flex flex-row gap-4 items-center">
+                      <span className="text-xl">E-wallet Momo</span>
+                      <img src="/images/momo.png" alt="momo" width="6%" />
+                    </div>
+                  </Radio>
                   <Collapse onChange={callback}>
                     <Panel
                       header={<span className="text-xl">Internet Banking</span>}
@@ -62,7 +72,7 @@ export default function Checkout(props) {
                     >
                       <div className="grid grid-flow-col grid-cols-6">
                         <div className="col-span-1">
-                          <Radio value={2}>
+                          <Radio value={4}>
                             <img
                               src="/images/techcombank.png"
                               width="100%"
@@ -71,27 +81,20 @@ export default function Checkout(props) {
                           </Radio>
                         </div>
                         <div className="col-span-1">
-                          <Radio value={3}>
+                          <Radio value={5}>
                             <img src="/images/vib.png" width="100%" alt="" />
                           </Radio>
                         </div>
                       </div>
                     </Panel>
                   </Collapse>
-
-                  <Radio value={4}>
-                    <img src="/images/paypal.png" alt="paypal" width="100%" />
-                  </Radio>
-                  <Radio value={5}>
-                    <img src="/images/momo.png" alt="momo" width="8%" />
-                  </Radio>
                 </Space>
               </Radio.Group>
               <textarea
-                className="p-5 w-full mt-5"
+                className="p-5 w-full mt-10"
                 placeholder="Note to Administrator"
               ></textarea>
-              <button className="mt-5 py-5 w-full bg-indigo-500 hover:bg-indigo-700 text-lg rounded-md transition duration-150 text-white">
+              <button className="mt-10 py-5 w-full bg-indigo-500 hover:bg-indigo-700 text-lg rounded-md transition duration-150 text-white">
                 Place order
               </button>
             </div>
@@ -104,7 +107,11 @@ export default function Checkout(props) {
               <div className="your-order-body border-2 rounded-md p-5">
                 <div className="grid grid-flow-col grid-cols-12 gap-2">
                   <div className="col-span-2">
-                    <img className="rounded-md" src={courseDetail?.hinhAnh} alt={courseDetail.tenKhoaHoc} />
+                    <img
+                      className="rounded-md"
+                      src={courseDetail?.hinhAnh}
+                      alt={courseDetail.tenKhoaHoc}
+                    />
                   </div>
                   <div className="pl-5 col-span-8 place-self-center justify-self-start text-lg">
                     <Link to={`/courses/detail/${courseDetail.maKhoaHoc}`}>

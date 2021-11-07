@@ -39,7 +39,7 @@ export default function UserTemplate(props) {
             <SubMenuDropdown isOpen={isOpen} toggle={toggle} />
 
             <Fragment>
-              <div className="user-page">
+              <div className="user-page mb-16">
                 <div className="grid grid-flow-col grid-cols-12 justify-center gap-x-8 px-5 pt-5 relative">
                   <div className="welcome-modal col-span-4 px-12">
                       <LogoModal />

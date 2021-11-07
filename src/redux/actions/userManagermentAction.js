@@ -15,7 +15,6 @@ export const signInAction = (DangNhap,setShowModal)=>{
                 })
                 //Redirect to previous page
                 history.goBack();
-                //close Modal SignIn
                 setShowModal(false)
             }
 

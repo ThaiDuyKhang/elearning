@@ -1,5 +1,5 @@
 .nav-links {
-  @apply mx-3 my-4 px-4 pt-2 pb-3 text-lg rounded-md font-semibold text-black 
+  @apply mx-2 my-4 px-4 p-4 text-lg rounded-md font-medium text-black 
     hover:shadow-lg transition-colors duration-200;
 }
 .nav-links:hover,
@@ -22,15 +22,16 @@
   transition: all .2s;
 }
 .sub-link-menu {
-  @apply py-2 px-4 block text-lg text-black transition duration-200;
+  @apply py-2 px-4 block text-lg text-black transition duration-200 rounded-md w-full;
 }
 
 .dropdown-nav {
-  width: 200px;
+  padding: 10px;
+  width: fit-content;
   position: absolute;
   top: 80px;
   list-style: none;
-  text-align: start;
+
 }
 
 .nav-links > ul {
@@ -62,6 +63,26 @@
 .mobile-menu-hide {
   transform-origin: top center;
   animation: rotateX 300ms ease-in-out forwards;
+}
+.ant-select {
+  display: inline-flex!important;
+  vertical-align: middle!important;
+}
+.ant-select:not(.ant-select-disabled):hover .ant-select-selector,
+.ant-select-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input) .ant-select-selector,
+.ant-select:not(.ant-select-customize-input) .ant-select-selector{
+  border:none!important;
+  box-shadow: none!important;
+background-color: transparent!important;
+}
+.ant-select-item-option{
+  display: block!important;
+}
+.ant-select-item-option-content {
+  flex: unset!important;
+  display: flex!important;
+  justify-content: center!important;
+  align-items: center!important;
 }
 
 @keyframes rotateX {

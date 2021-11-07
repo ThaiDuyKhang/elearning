@@ -9,7 +9,7 @@ export default function SignInModal({ showModal, setShowModal }) {
   return (
     <Fragment>
       <Modal
-        width={1000}
+        width={1300}
         centered
         visible={showModal}
         onOk={() => setShowModal(false)}

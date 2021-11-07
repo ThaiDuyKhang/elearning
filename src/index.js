@@ -7,6 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 import {Provider} from 'react-redux';
 import {store} from "./redux/configStore";
 import 'antd/dist/antd.css';
+import './i18n';
 
 ReactDOM.render(
   <Provider store={store}>

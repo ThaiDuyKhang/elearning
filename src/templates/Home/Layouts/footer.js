@@ -31,7 +31,7 @@ export default function Footer() {
       <div className="container">
         <LazyLoad>
           <div
-            className="py-24 mt-24 mb-24 flex justify-center rounded-3xl"
+            className="py-16 mt-64 mb-24 flex justify-center rounded-3xl"
             style={{
               backgroundImage: 'url("/images/bgNewsletter.png")',
               backgroundPosition: "center center",

@@ -1,12 +1,14 @@
 import {
-  GET_COURSES,
-  GET_DETAILS_COURSES,
-  GET_COURSES_BY_CATEGORY,
+  UPDATE_COURSE,
+  DELETE_COURSE,
   GET_COURSES_ADMIN,
+  ADD_NEW_COURSE_ADMIN,
 } from "../types/coursesType";
 
+let newCourse = {};
+
 const stateDefault = {
-  arrCourses: [
+  arrCoursesAdmin: [
     {
       maKhoaHoc: "0.14967431092137828",
       biDanh: "php",
@@ -29,28 +31,27 @@ const stateDefault = {
       },
     },
   ],
+  arrCoursesAddNew: newCourse,
 
-  courseDetail: {},
-  arrCourseByCate: {},
-  detailCourseEdit: {},
+  detailCourseEdit: [],
 };
 
-export const CoursesReducer = (state = stateDefault, action) => {
+export const CoursesAdminReducer = (state = stateDefault, action) => {
   switch (action.type) {
-    case GET_COURSES: {
-      state.arrCourses = action.arrCourses;
-      return { ...state };
-    }
     case GET_COURSES_ADMIN: {
       state.arrCoursesAdmin = action.arrCoursesAdmin;
       return { ...state };
     }
-    case GET_DETAILS_COURSES: {
-      state.courseDetail = action.courseDetail;
+    case ADD_NEW_COURSE_ADMIN: {
+      let { newCourse } = action;
+      return { ...state, newCourse };
+    }
+    case UPDATE_COURSE: {
+      state.detailCourseEdit = action.detailCourseEdit;
       return { ...state };
     }
-    case GET_COURSES_BY_CATEGORY: {
-      state.arrCourses = action.arrCourses;
+    case DELETE_COURSE: {
+      state.detailCourseEdit = action.detailCourseEdit;
       return { ...state };
     }
     default:

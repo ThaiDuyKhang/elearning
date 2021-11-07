@@ -27,6 +27,14 @@
 .ant-modal-body{
   padding: 24px 24px 0 24px!important;
 }
+.passwordSignIn input[type='password'] {
+      border-color: none!important;
+    border-top-width: 0!important;
+    border-right-width: 0!important;
+    border-bottom-width: 1px;
+    border-left-width: 0!important;
+
+}
 .line-modal {
 
   width: 1px;
@@ -42,22 +50,24 @@
 .google-login-btn:hover .google-login {
 border: 1px solid #fff!important;
 }
-.google-login-btn:hover {
+.google-login-btn:hover,
+.facebook-login-btn:hover,
+.github-login-btn:hover {
 background-color: #E96036;
 color: #fff;
 border-color:#E96036!important;
 }
 
-.google-login-btn {
-    width: 100%;
+.google-login-btn, .facebook-login-btn, .github-login-btn {
+    width: fit-content;
     border-radius: 5px;
     padding:5px;
     border: 1px solid #ddd;
 }
+
 .google-login {
     background-color: #E96036!important;
     padding: 5px;
-    border-radius: 5px;
 }
 
 
