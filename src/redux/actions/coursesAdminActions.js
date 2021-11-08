@@ -1,22 +1,22 @@
 import { history } from "../../App";
-import {useLocation} from 'react-router-dom';
 import { getCoursesServices } from "../../services/GetCoursesServices";
 import {
-  GET_COURSES,
   UPDATE_COURSE,
   ADD_NEW_COURSE_ADMIN,
+  GET_COURSES_ADMIN,
+  GET_DETAILS_COURSES
 } from "../types/coursesType";
 
-export const getCoursesAdminAction = (tenKhoaHoc)=>{
+export const getCoursesAdminAction = (tenKhoaHoc='')=>{
   return async (dispatch) => {
   try {
     const result = await getCoursesServices.getCoursesAdmin(tenKhoaHoc);
     dispatch({
-      type: GET_COURSES,
+      type: GET_COURSES_ADMIN,
       arrCoursesAdmin: result.data,
     });
   } catch (errors) {
-    console.log(errors);
+    console.log(errors.response?.data);
   }
 }
 }
@@ -45,7 +45,7 @@ export const getDetailsCoursesEditAction = (id) => {
       const result = await getCoursesServices.getDetailCourse(id);
       // console.log({result})
       dispatch({
-        type: UPDATE_COURSE,
+        type: GET_DETAILS_COURSES,
         detailCourseEdit: result.data,
       });
     } catch (errors) {
@@ -58,13 +58,19 @@ export const updateCourseAction = (formData) => {
     try {
       const result = await getCoursesServices.updateCourseUpload(formData);
       alert ('Cập nhật khóa học thành công!')
-      console.log({result})
+      // console.log({result})
+      if (result.status === 200){
+        dispatch({
+          type: UPDATE_COURSE,
+          courseUpdate: result.data,
+        });
+      }
       
       dispatch(getCoursesAdminAction())
       history.push('/admin/courses')
 
     } catch (errors) {
-      console.log(errors);
+      console.log(errors.response?.data);
       
     }
   };

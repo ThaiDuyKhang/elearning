@@ -15,6 +15,7 @@ import Users from "./templates/Admin/Pages/Users";
 import Documents from "./templates/Admin/Pages/Documents";
 import AddNewCourses from "./templates/Admin/Pages/Courses/addNewCourses";
 import EditCourse from "./templates/Admin/Pages/Courses/editCourse";
+import CoursesTemplate from "./templates/Home/Pages/Courses/CoursesTemplate";
 
 export const history = createBrowserHistory();
 
@@ -48,48 +49,48 @@ function App() {
                 import("./templates/Home/Pages/DetailsCourse")
               )}
             />
-            <HomeTemplate
-              path="/courses/BackEnd"
+            <CoursesTemplate
+              path="/courses/:cate"
               exact
               Component={lazy(() =>
-                import("./templates/Home/Pages/Courses/BackEnd")
+                import("./templates/Home/Pages/Courses/CourseEachCate")
               )}
             />
-            <HomeTemplate
-              path="/courses/FrontEnd"
+            {/* <CoursesTemplate
+              path="/courses/:cate"
               exact
               Component={lazy(() =>
                 import("./templates/Home/Pages/Courses/FrontEnd")
               )}
             />
-            <HomeTemplate
-              path="/courses/Design"
+            <CoursesTemplate
+              path="/courses/:cate"
               exact
               Component={lazy(() =>
                 import("./templates/Home/Pages/Courses/Design")
               )}
             />
-            <HomeTemplate
-              path="/courses/DiDong"
+            <CoursesTemplate
+              path="/courses/:cate"
               exact
               Component={lazy(() =>
                 import("./templates/Home/Pages/Courses/DiDong")
               )}
             />
-            <HomeTemplate
-              path="/courses/TuDuy"
+            <CoursesTemplate
+              path="/courses/:cate"
               exact
               Component={lazy(() =>
                 import("./templates/Home/Pages/Courses/TuDuy")
               )}
             />
-            <HomeTemplate
-              path="/courses/FullStack"
+            <CoursesTemplate
+              path="/courses/:cate"
               exact
               Component={lazy(() =>
                 import("./templates/Home/Pages/Courses/FullStack")
               )}
-            />
+            /> */}
             <HomeTemplate
               path="/instructor"
               exact

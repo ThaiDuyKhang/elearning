@@ -21,7 +21,7 @@ export default function AddNewCourses() {
     setComponentSize(size);
   };
 
-  const handleChangeFile = (e) => {
+  const handleChangeFile = async (e) => {
     //Lấy file ra từ event
     let file = e.target.files[0];
 
@@ -30,6 +30,8 @@ export default function AddNewCourses() {
       file.type === "image/png" ||
       file.type === "image/jpg"
     ) {
+      //Đem dữ liệu lưu vào formik
+      await formik.setFieldValue("hinhAnh", file);
       //Tạo đối tượng đọc file
       let reader = new FileReader();
       reader.readAsDataURL(file);
@@ -37,18 +39,15 @@ export default function AddNewCourses() {
         // console.log(e.target.result);
         setImgSrc(e.target.result);
       };
-      //Đem dữ liệu lưu vào formik
-      formik.setFieldValue("hinhAnh", file);
     }
   };
   const toDay = new Date();
-  const time = toDay.getHours() + toDay.getMinutes() + toDay.getSeconds();
-  const date =
-    toDay.getDate() + "/" + (toDay.getMonth() + 1) + "/" + toDay.getFullYear();
-
+  const date =  toDay.getDate() + "/" + (toDay.getMonth() + 1) + "/" + toDay.getFullYear();
+  const maKH = `${toDay.getDate()}${(toDay.getMonth() + 1)}${toDay.getFullYear()}${toDay.getHours()}${toDay.getMinutes()}${toDay.getMilliseconds()}`;
+console.log(maKH.toString())
   const formik = useFormik({
     initialValues: {
-      maKhoaHoc: time,
+      maKhoaHoc:maKH.toString(15),
       biDanh: "",
       tenKhoaHoc: "",
       moTa: "",
@@ -65,8 +64,10 @@ export default function AddNewCourses() {
       for (let key in values) {
         if (key !== "hinhAnh") {
           formData.append(key, values[key]);
-        } else {
+        } else if (values.hinhAnh !== null) {
             formData.append("File", values.hinhAnh, values.hinhAnh.name);
+        } else {
+          alert('Vui lòng chọn ảnh đại diện cho khóa học')
         }
       }
       console.log({values})
@@ -111,12 +112,12 @@ export default function AddNewCourses() {
               </Form.Item>
               <Form.Item label="Danh mục khóa học">
                 <Select name="maDanhMucKhoaHoc" placeholder="Chọn danh mục khóa học" onChange={(values)=> formik.setFieldValue('maDanhMucKhoaHoc', values )} >
-                  <Select.Option value="BackEnd">Back-end Development</Select.Option>
-                  <Select.Option value="FrontEnd">Front-end Development</Select.Option>
-                  <Select.Option value="FullStack">Full Stack Development</Select.Option>
-                  <Select.Option value="Design">Web Desgin</Select.Option>
-                  <Select.Option value="DiDong">Mobile Development</Select.Option>
-                  <Select.Option value="TuDuy">Mindset Development</Select.Option>
+                  <Select.Option value="BackEnd">Lập trình Backend</Select.Option>
+                  <Select.Option value="FrontEnd">Lập trình Front end</Select.Option>
+                  <Select.Option value="FullStack">Lập trình Full Stack</Select.Option>
+                  <Select.Option value="Design">Thiết kế Web</Select.Option>
+                  <Select.Option value="DiDong">Lập trình di động</Select.Option>
+                  <Select.Option value="TuDuy">Tư duy lập trình</Select.Option>
                 </Select>
               </Form.Item>
               <Form.Item label="Mô tả">
@@ -125,7 +126,7 @@ export default function AddNewCourses() {
               <Form.Item label="Hình đại diện">
                 <input
                   type="file"
-                  name="hinhAnh"
+                  accept="image/jpeg, image/png, image/jpg"
                   onChange={handleChangeFile}
                 />
                 <br />

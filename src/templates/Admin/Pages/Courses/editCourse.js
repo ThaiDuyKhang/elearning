@@ -1,17 +1,20 @@
 import React, { Fragment, useEffect, useState } from "react";
-import { Form, Input } from "antd";
+import { Form, Input, Select } from "antd";
 import { useFormik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
 import {
   getDetailsCoursesEditAction,
   updateCourseAction,
 } from "../../../../redux/actions/coursesAdminActions";
+import { GROUPID } from "../../../../utilities/Settings/config";
 
 export default function EditCourse(props) {
   const [componentSize, setComponentSize] = useState("default");
   const [imgSrc, setImgSrc] = useState("");
 
-  const { detailCourseEdit } = useSelector((state) => state.CoursesAdminReducer);
+  const { detailCourseEdit } = useSelector(
+    (state) => state.CoursesAdminReducer
+  );
   //   console.log({detailCourseEdit})
   const dispatch = useDispatch();
 
@@ -26,9 +29,11 @@ export default function EditCourse(props) {
     initialValues: {
       maKhoaHoc: detailCourseEdit?.maKhoaHoc,
       tenKhoaHoc: detailCourseEdit?.tenKhoaHoc,
+      tenDanhMucKhoaHoc: detailCourseEdit?.danhMucKhoaHoc?.tenDanhMucKhoaHoc,
       moTa: detailCourseEdit?.moTa,
       hinhAnh: null,
-      tenDanhMucKhoaHoc: detailCourseEdit?.danhMucKhoaHoc?.tenDanhMucKhoaHoc,
+      maNhom: GROUPID,
+      ngayTao: "",
     },
     onSubmit: (values) => {
       console.log("values", values);
@@ -113,12 +118,34 @@ export default function EditCourse(props) {
                   onChange={formik.handleChange}
                 />
               </Form.Item>
-              <Form.Item label="Danh mục">
-                <Input
+              <Form.Item label="Danh mục khóa học">
+                <Select
                   name="tenDanhMucKhoaHoc"
+                  placeholder="Chọn danh mục khóa học"
                   value={formik.values.tenDanhMucKhoaHoc}
-                  onChange={formik.handleChange}
-                />
+                  onChange={(values) =>
+                    formik.setFieldValue("tenDanhMucKhoaHoc", values)
+                  }
+                >
+                  <Select.Option value="Lập trình Backend">
+                    Lập trình Backend
+                  </Select.Option>
+                  <Select.Option value="Lập trình Front end">
+                    Lập trình Front end
+                  </Select.Option>
+                  <Select.Option value="Lập trình Full Stack">
+                    Lập trình Full Stack
+                  </Select.Option>
+                  <Select.Option value="Thiết kế Web">
+                    Thiết kế Web
+                  </Select.Option>
+                  <Select.Option value="Lập trình di động">
+                    Lập trình di động
+                  </Select.Option>
+                  <Select.Option value="Tư duy lập trình">
+                    Tư duy lập trình
+                  </Select.Option>
+                </Select>
               </Form.Item>
               <Form.Item label="Mô tả">
                 <Input.TextArea

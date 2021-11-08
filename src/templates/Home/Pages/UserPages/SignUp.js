@@ -52,7 +52,79 @@ export default function Signup({ setShowModal }) {
                 <p className="text-red-600">{formik.errors.taiKhoan}</p>
               )}
             </div>
-            <div className="mt-8">
+            <div className="mt-8 passwordSignIn">
+              <div className="flex justify-between items-center">
+                <div className="text-sm font-bold text-gray-700 tracking-wide">
+                  Password
+                </div>
+              </div>
+              <input
+                type="password"
+                name="matKhau"
+                value={formik.values.matKhau}
+                onChange={formik.handleChange}
+                className="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-red-500"
+                placeholder="Enter your password"
+              />
+              {formik.errors.matKhau && formik.touched.matKhau && (
+                <p className="text-red-600">{formik.errors.matKhau}</p>
+              )}
+            </div>
+            <div className="mt-8 passwordSignIn">
+              <div className="flex justify-between items-center">
+                <div className="text-sm font-bold text-gray-700 tracking-wide">
+                  Password
+                </div>
+              </div>
+              <input
+                type="password"
+                name="matKhau"
+                value={formik.values.matKhau}
+                onChange={formik.handleChange}
+                className="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-red-500"
+                placeholder="Enter your password"
+              />
+              {formik.errors.matKhau && formik.touched.matKhau && (
+                <p className="text-red-600">{formik.errors.matKhau}</p>
+              )}
+            </div>
+            <div className="mt-8 passwordSignIn">
+              <div className="flex justify-between items-center">
+                <div className="text-sm font-bold text-gray-700 tracking-wide">
+                  Password
+                </div>
+              </div>
+              <input
+                type="password"
+                name="matKhau"
+                value={formik.values.matKhau}
+                onChange={formik.handleChange}
+                className="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-red-500"
+                placeholder="Enter your password"
+              />
+              {formik.errors.matKhau && formik.touched.matKhau && (
+                <p className="text-red-600">{formik.errors.matKhau}</p>
+              )}
+            </div>
+            <div className="mt-8 passwordSignIn">
+              <div className="flex justify-between items-center">
+                <div className="text-sm font-bold text-gray-700 tracking-wide">
+                  Password
+                </div>
+              </div>
+              <input
+                type="password"
+                name="matKhau"
+                value={formik.values.matKhau}
+                onChange={formik.handleChange}
+                className="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-red-500"
+                placeholder="Enter your password"
+              />
+              {formik.errors.matKhau && formik.touched.matKhau && (
+                <p className="text-red-600">{formik.errors.matKhau}</p>
+              )}
+            </div>
+            <div className="mt-8 passwordSignIn">
               <div className="flex justify-between items-center">
                 <div className="text-sm font-bold text-gray-700 tracking-wide">
                   Password

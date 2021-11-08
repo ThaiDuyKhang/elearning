@@ -106,7 +106,7 @@ export default function Navbar({ toggle }) {
         <li key={index}>
           <NavLink
             activeClassName="active"
-            className="sub-link-menu"
+            className="sub-link-menu my-1"
             to={`/courses/${cateCourses.maDanhMuc}`}
           >
             {cateCourses.tenDanhMuc}
@@ -195,29 +195,9 @@ export default function Navbar({ toggle }) {
           {t("Contact")}
         </NavLink>
         {renderSignIn()}
-        {/* <div className="inline-flex mx-2">
-          <button
-            className="signin-btn mr-2 px-4 py-2 text-lg  rounded-md"
-            onClick={() => {
-              setShowModal(!showModal);
-            }}
-          >
-            {t('Sign In')}
-          </button>
-          {showModal && (
-            <SignInModal setShowModal={setShowModal} showModal={showModal} />
-          )}
-        <NavLink
-          activeClassName="active"
-          className="hover:shadow-xl font-normal text-lg signup-btn px-4 py-3 rounded-md"
-          to="/signup"
-        >
-          {t('Sign Up')}
-        </NavLink>
-        </div> */}
         <Select
           defaultValue="en"
-          style={{ width: 70, marginLeft: "0.5rem" }}
+          style={{ width: 70, marginLeft: "0.5rem", border:"none" }}
           onChange={handleChangeLanguges}
         >
           <Option value="en">

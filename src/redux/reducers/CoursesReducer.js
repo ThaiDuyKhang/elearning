@@ -1,8 +1,8 @@
 import {
   GET_COURSES,
   GET_DETAILS_COURSES,
-  GET_COURSES_BY_CATEGORY,
   GET_COURSES_ADMIN,
+  GET_COURSES_EACH_CATEGORY,
 } from "../types/coursesType";
 
 const stateDefault = {
@@ -31,7 +31,7 @@ const stateDefault = {
   ],
 
   courseDetail: {},
-  arrCourseByCate: {},
+arrCourseEachCate: [],
   detailCourseEdit: {},
 };
 
@@ -49,8 +49,8 @@ export const CoursesReducer = (state = stateDefault, action) => {
       state.courseDetail = action.courseDetail;
       return { ...state };
     }
-    case GET_COURSES_BY_CATEGORY: {
-      state.arrCourses = action.arrCourses;
+    case GET_COURSES_EACH_CATEGORY: {
+      state.arrCourseEachCate = action.arrCourseEachCate;
       return { ...state };
     }
     default:

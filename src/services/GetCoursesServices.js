@@ -11,9 +11,11 @@ export class GetCoursesServices extends baseService {
     return this.get(`/api/QuanLyKhoaHoc/LayDanhSachKhoaHoc?MaNhom=${GROUPID}`);
   };
   getCoursesAdmin = (tenKhoaHoc) => {
+    if (tenKhoaHoc.trim() !== ''){
     return this.get(
       `api/QuanLyKhoaHoc/LayDanhSachKhoaHoc?tenKhoaHoc=${tenKhoaHoc}&MaNhom=${GROUPID}`
-    );
+    )}
+    return this.get(`/api/QuanLyKhoaHoc/LayDanhSachKhoaHoc?MaNhom=${GROUPID}`);
   };
 
   getDetailCourse = (maKhoaHoc) => {
@@ -21,7 +23,7 @@ export class GetCoursesServices extends baseService {
       `/api/QuanLyKhoaHoc/LayThongTinKhoaHoc?maKhoaHoc=${maKhoaHoc}`
     );
   };
-  getCoursesByCategory = (maDanhMuc) => {
+  getCoursesEachCategory = (maDanhMuc) => {
     return this.get(
       `/api/QuanLyKhoaHoc/LayKhoaHocTheoDanhMuc?maDanhMuc=${maDanhMuc}&MaNhom=${GROUPID}`
     );

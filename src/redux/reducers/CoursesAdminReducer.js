@@ -3,9 +3,11 @@ import {
   DELETE_COURSE,
   GET_COURSES_ADMIN,
   ADD_NEW_COURSE_ADMIN,
+  GET_DETAILS_COURSES,
 } from "../types/coursesType";
 
 let newCourse = {};
+let courseUpdate = {};
 
 const stateDefault = {
   arrCoursesAdmin: [
@@ -32,7 +34,8 @@ const stateDefault = {
     },
   ],
   arrCoursesAddNew: newCourse,
-
+  arrCourseEdit: courseUpdate,
+  
   detailCourseEdit: [],
 };
 
@@ -46,9 +49,13 @@ export const CoursesAdminReducer = (state = stateDefault, action) => {
       let { newCourse } = action;
       return { ...state, newCourse };
     }
-    case UPDATE_COURSE: {
+    case GET_DETAILS_COURSES: {
       state.detailCourseEdit = action.detailCourseEdit;
       return { ...state };
+    }
+    case UPDATE_COURSE: {
+      let {courseUpdate} = action;
+      return { ...state, courseUpdate };
     }
     case DELETE_COURSE: {
       state.detailCourseEdit = action.detailCourseEdit;
