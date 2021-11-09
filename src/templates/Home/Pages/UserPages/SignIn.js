@@ -187,7 +187,7 @@ export default function SignIn({ setShowModal }) {
             <div>
               <p className="my-8 border-t-2 text-center font-normal text-base pt-5">
                 - Sign in to admin dashboard with -
-              <br/>Username: <span style={{color:"#E96036"}}>khangne</span> - Password: <span style={{color:"#E96036"}}>123465</span></p>
+              <br/>Username: <span style={{color:"#E96036"}}>khangne</span> - Password: <span style={{color:"#E96036"}}>123456</span></p>
             </div>
           </div>
         </div>
