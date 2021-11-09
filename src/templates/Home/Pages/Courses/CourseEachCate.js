@@ -13,7 +13,7 @@ export default function CourseEachCate(props) {
   const dispatch = useDispatch();
   const location = useLocation();
 
-  const [loadMore, setLoadMore] = useState(3);
+  const [loadMore, setLoadMore] = useState(8);
 
   const handleLoadMore = () => {
     setLoadMore(loadMore + 8);

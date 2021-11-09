@@ -28,7 +28,7 @@ export default function SignIn({ setShowModal }) {
 
   return (
     <Fragment>
-      <div className="grid grid-flow-row gap-x-8 px-5 pt-5">
+      <div className="grid grid-flow-row gap-x-8 px-5 pt-5" style={{fontFamily:"Arial, Helvetica, sans-serif"}}>
         <div className="w-fit place-self-center">
           <div className="flex flex-row gap-4">
             <button className="google-login-btn mt-5 flex items-center text-gray-500 text-base p-5 rounded-lg transition-colors">
@@ -96,7 +96,7 @@ export default function SignIn({ setShowModal }) {
                 <g id="Layer_2" data-name="Layer 2">
                   <g id="Layer_1-2" data-name="Layer 1">
                     <rect
-                    fill="#fff"
+                      fill="#fff"
                       class="cls-1"
                       x="2.35"
                       y="3.17"
@@ -118,14 +118,13 @@ export default function SignIn({ setShowModal }) {
           <form onSubmit={formik.handleSubmit}>
             <div>
               <div className="text-sm font-bold text-gray-700 tracking-wide">
-                Username
+                Username:
               </div>
               <input
                 name="taiKhoan"
                 value={formik.values.taiKhoan}
                 onChange={formik.handleChange}
                 className="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-red-500"
-                placeholder="Enter your username"
               />
 
               {formik.errors.taiKhoan && formik.touched.taiKhoan && (
@@ -144,7 +143,6 @@ export default function SignIn({ setShowModal }) {
                 value={formik.values.matKhau}
                 onChange={formik.handleChange}
                 className=" w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-red-500"
-                placeholder="Enter your password"
               />
               {formik.errors.matKhau && formik.touched.matKhau && (
                 <p className="text-red-600">{formik.errors.matKhau}</p>

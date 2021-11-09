@@ -4,7 +4,6 @@ import LazyLoad from "react-lazyload";
 import "./Style/footer.css";
 import { getCateCoursesAction } from "../../../redux/actions/coursesActions";
 import { Link } from "react-router-dom";
-import { history } from "../../../App";
 
 export default function Footer() {
   const { arrCateCourse } = useSelector(
