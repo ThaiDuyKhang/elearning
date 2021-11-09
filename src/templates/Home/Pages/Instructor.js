@@ -16,7 +16,7 @@ export default function Instructor() {
       github: "",
     },
     {
-      name: "Đăng Chí Thanh",
+      name: "Đặng Chí Thanh",
       img: dangchithanh,
       fb: "https://fb.com/chithanh.tist",
       github: "https://github.com/tcdtist",
@@ -53,7 +53,7 @@ export default function Instructor() {
             <div className="instructor_rating flex justify-center">
               <RatingsDetailsCourse />
             </div>
-            <div className="grid grid-flow-col gap-2 mt-4">
+            <div className="grid grid-flow-col gap-2 mt-4 instructor_social">
               <a
                 href={item.fb}
                 title="Facebook"

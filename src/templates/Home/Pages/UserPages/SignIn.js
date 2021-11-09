@@ -28,7 +28,10 @@ export default function SignIn({ setShowModal }) {
 
   return (
     <Fragment>
-      <div className="grid grid-flow-row gap-x-8 px-5 pt-5" style={{fontFamily:"Arial, Helvetica, sans-serif"}}>
+      <div
+        className="grid grid-flow-row gap-x-8 px-5 pt-5"
+        style={{ fontFamily: "Arial, Helvetica, sans-serif" }}
+      >
         <div className="w-fit place-self-center">
           <div className="flex flex-row gap-4">
             <button className="google-login-btn mt-5 flex items-center text-gray-500 text-base p-5 rounded-lg transition-colors">
@@ -180,6 +183,11 @@ export default function SignIn({ setShowModal }) {
               >
                 Sign up
               </button>
+            </div>
+            <div>
+              <p className="my-8 border-t-2 text-center font-normal text-base pt-5">
+                - Sign in to admin dashboard with -
+              <br/>Username: <span style={{color:"#E96036"}}>khangne</span> - Password: <span style={{color:"#E96036"}}>123465</span></p>
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Modal, Button } from 'antd';
+import { Modal} from 'antd';
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import "./../Style/StylePages.css";

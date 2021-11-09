@@ -1,7 +1,6 @@
 import {
   GET_COURSES,
   GET_DETAILS_COURSES,
-  GET_COURSES_ADMIN,
   GET_COURSES_EACH_CATEGORY,
 } from "../types/coursesType";
 
@@ -31,7 +30,7 @@ const stateDefault = {
   ],
 
   courseDetail: {},
-arrCourseEachCate: [],
+  arrCourseEachCate: [],
   detailCourseEdit: {},
 };
 
@@ -39,10 +38,6 @@ export const CoursesReducer = (state = stateDefault, action) => {
   switch (action.type) {
     case GET_COURSES: {
       state.arrCourses = action.arrCourses;
-      return { ...state };
-    }
-    case GET_COURSES_ADMIN: {
-      state.arrCoursesAdmin = action.arrCoursesAdmin;
       return { ...state };
     }
     case GET_DETAILS_COURSES: {

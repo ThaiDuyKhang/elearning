@@ -60,7 +60,7 @@ export default function Navbar({ toggle }) {
       <div className="inline-flex group mx-2">
         <button
           onClick={() => {
-            history.push("./profile");
+            history.push("/about");
           }}
           className="signin-btn px-4 py-2 text-lg relative rounded-md"
         >
@@ -76,7 +76,7 @@ export default function Navbar({ toggle }) {
               activeClassName="active"
               className="sub-link-menu"
               onClick={() => {
-                history.push("./profile");
+                history.push("/about");
               }}
             >
               Profile
@@ -95,6 +95,17 @@ export default function Navbar({ toggle }) {
               Sign out
             </button>
           </li>
+          { (userSignIn.taiKhoan !== "khangne") ? '' : <li>
+            <button
+              activeClassName="active"
+              className="sub-link-menu"
+              onClick={() => {
+                 history.push('/admin');
+              }}
+            >
+              Dashboard
+            </button>
+          </li>}
         </ul>
       </div>
     );}

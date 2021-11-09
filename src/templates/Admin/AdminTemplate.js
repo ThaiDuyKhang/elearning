@@ -28,9 +28,9 @@ export default function AdminTemplate(props) {
     return <Redirect to="/alert" />;
   }
 
-  // if (userSignIn.maLoaiNguoiDung !== "GV") {
-  //   return <Redirect to="/alert" />;
-  // }
+  if (userSignIn.taiKhoan !== "khangne") {
+    return <Redirect to="/alert" />;
+  }
 
   const renderSignIn = () => {
     if (!_.isEmpty(userSignIn)) {
@@ -142,25 +142,40 @@ export default function AdminTemplate(props) {
                             </Link>
                           </Menu.Item>
                         </SubMenu>
-                        <Menu.Item key="4" style={{ display: "flex" }}>
-                          <Link to="/admin/users" style={{ display: "flex" }}>
-                            <UsersIcon className="mr-2" width="15" />
-                            Users
-                          </Link>
-                        </Menu.Item>
-                        <Menu.Item key="5" style={{ display: "flex" }}>
-                          <Link
-                            to="/admin/instructor"
-                            style={{ display: "flex" }}
+                        <SubMenu
+                          key="sub2"
+                          title="User"
+                          icon={<UsersIcon width="15" />}
+                        >
+                          <Menu.Item
+                            key="4"
+                            style={{ display: "flex", alignItems: "center" }}
                           >
-                            <CalendarIcon className="mr-2" width="15" />
-                            Instructor
-                          </Link>
-                        </Menu.Item>
+                            <Link
+                              to="/admin/users"
+                              style={{ display: "flex" }}
+                            >
+                              <DotsHorizontalIcon className="mr-2" width="15" />
+                              All Users
+                            </Link>
+                          </Menu.Item>
+                          <Menu.Item
+                            key="5"
+                            style={{ display: "flex", alignItems: "center" }}
+                          >
+                            <Link
+                              to="/admin/users/add-new"
+                              style={{ display: "flex" }}
+                            >
+                              <PlusCircleIcon className="mr-2" width="15" />
+                              Add new
+                            </Link>
+                          </Menu.Item>
+                        </SubMenu>      
                         <Menu.Item key="6" style={{ display: "flex" }}>
                           <Link to="/admin/docs" style={{ display: "flex" }}>
                             <FolderIcon className="mr-2" width="15" />
-                            Document
+                            Documents
                           </Link>
                         </Menu.Item>
                       </Menu>

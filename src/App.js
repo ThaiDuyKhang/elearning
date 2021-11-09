@@ -10,12 +10,12 @@ import CheckoutTemplate from "./templates/CheckoutTemplate/CheckoutTemplate";
 import AdminTemplate from "./templates/Admin/AdminTemplate";
 import Dashboard from "./templates/Admin/Pages/Dashboard";
 import Courses from "./templates/Admin/Pages/Courses/Courses";
-import Instructors from "./templates/Admin/Pages/Instructors";
-import Users from "./templates/Admin/Pages/Users";
+import Users from "./templates/Admin/Pages/Users/Users";
 import Documents from "./templates/Admin/Pages/Documents";
 import AddNewCourses from "./templates/Admin/Pages/Courses/addNewCourses";
 import EditCourse from "./templates/Admin/Pages/Courses/editCourse";
 import CoursesTemplate from "./templates/Home/Pages/Courses/CoursesTemplate";
+import addNewUser from "./templates/Admin/Pages/Users/addNewUser";
 
 export const history = createBrowserHistory();
 
@@ -56,41 +56,6 @@ function App() {
                 import("./templates/Home/Pages/Courses/CourseEachCate")
               )}
             />
-            {/* <CoursesTemplate
-              path="/courses/:cate"
-              exact
-              Component={lazy(() =>
-                import("./templates/Home/Pages/Courses/FrontEnd")
-              )}
-            />
-            <CoursesTemplate
-              path="/courses/:cate"
-              exact
-              Component={lazy(() =>
-                import("./templates/Home/Pages/Courses/Design")
-              )}
-            />
-            <CoursesTemplate
-              path="/courses/:cate"
-              exact
-              Component={lazy(() =>
-                import("./templates/Home/Pages/Courses/DiDong")
-              )}
-            />
-            <CoursesTemplate
-              path="/courses/:cate"
-              exact
-              Component={lazy(() =>
-                import("./templates/Home/Pages/Courses/TuDuy")
-              )}
-            />
-            <CoursesTemplate
-              path="/courses/:cate"
-              exact
-              Component={lazy(() =>
-                import("./templates/Home/Pages/Courses/FullStack")
-              )}
-            /> */}
             <HomeTemplate
               path="/instructor"
               exact
@@ -156,14 +121,14 @@ function App() {
               Component={EditCourse}
             />
             <AdminTemplate
-              path="/admin/instructor"
-              exact
-              Component={Instructors}
-            />
-            <AdminTemplate
               path="/admin/users"
               exact
               Component={Users}
+            />
+            <AdminTemplate
+              path="/admin/users/add-new"
+              exact
+              Component={addNewUser}
             />
             <AdminTemplate
               path="/admin/docs"

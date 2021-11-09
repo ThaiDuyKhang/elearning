@@ -1,7 +1,7 @@
-.about svg {
+.about svg, .instructor_social svg {
   transition: 0.2s all;
 }
-.about svg:hover {
+.about svg:hover,.instructor_social svg:hover {
   fill: #e96036 !important;
   padding: 0 !important;
 }
