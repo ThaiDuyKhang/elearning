@@ -6,10 +6,12 @@ import { history } from "../../../../App";
 
 const text = [
   { title: "A lifetime of" },
-  { title: "confidence starts"},
-  { title: "here Child"},
-  {description: "Cybersoft is a Global training provider based across the Vietnam that specialises in accredited and bespoke training courses. We crush the barriers togetting a degree."}
-
+  { title: "confidence starts" },
+  { title: "here Child" },
+  {
+    description:
+      "Cybersoft is a Global training provider based across the Vietnam that specialises in accredited and bespoke training courses. We crush the barriers togetting a degree.",
+  },
 ];
 const button = [{ button: "Explore" }];
 
@@ -34,52 +36,57 @@ export default function Banner1() {
 
   return (
     <div
-      className="hero flex flex-row w-full justify-center items-center content-center
-      bg-no-repeat pb-10 2xl:px-40 bg-auto"
-      style={{backgroundColor:"#1E90FF",height: "700px", marginTop: "96px"}}
+      className="hero flex flex-col md:flex-row w-full justify-center items-center content-center
+      bg-no-repeat pb-10 2xl:px-40 bg-auto xl:mt-header"
+      style={{ backgroundColor: "#1E90FF", height: "700px" }}
     >
-      <div className="flex-1 content-center">
-      {propsUseTrailText.map((propsText, index) => {
-        return (
-          <div key={index}>
-          <animated.h1
-            style={propsText}
-            className="2xl:text-7xl md:text-5xl sm:text-4xl font-bold text-white
-            text-left mb-0 md:mb-1 2xl:mb-5"
-          >
-            {text[index].title}
-          </animated.h1>
-          <animated.p
-            style={propsText}
-            className="2xl:text-lg md:text-lg sm:text-sm text-white font-semibold
-            text-left mb-0 md:mb-1 2xl:mb-5">
-            {text[index].description}
-          </animated.p>
-          </div>
-        );
-      })}
-      {propsUseTrailBtn.map((propsBtn, index) => {
-        return (
-          <animated.button
-          onClick={(e)=>{
-            e.preventDefault();
-            history.push('/course')
-          }}
-            // href=""
-            key={index}
-            style={propsBtn}
-            className="mt-5 px-10 lg:text-3xl hover:bg-red-700 
-            rounded-lg text-3xl font-bold text-white hover:text-white flex items-center 
+      <div className="flex-1 content-center mt-24">
+        {propsUseTrailText.map((propsText, index) => {
+          return (
+            <div key={index}>
+              <animated.h1
+                style={propsText}
+                className="xl:text-7xl xl:mb-5 md:mb-1 leading-snug text-4xl font-bold text-white
+            text-left mb-0   px-3"
+              >
+                {text[index].title}
+              </animated.h1>
+              <animated.p
+                style={propsText}
+                className="xl:text-lg md:text-lg text-sm text-white
+            text-left mb-0 md:mb-1 2xl:mb-5 px-3"
+              >
+                {text[index].description}
+              </animated.p>
+            </div>
+          );
+        })}
+        {propsUseTrailBtn.map((propsBtn, index) => {
+          return (
+            <animated.button
+              onClick={(e) => {
+                e.preventDefault();
+                history.push("/course");
+              }}
+              key={index}
+              style={propsBtn}
+              className="mt-5 lg:px-10 px-6 hover:bg-red-700  mx-3
+            rounded-lg md:text-3xl lg:font-bold text-white hover:text-white flex items-center 
             transition ease-in-out duration-300"
-          >
-            {button[index].button}
-          </animated.button>
-        );
-      })}
+            >
+              {button[index].button}
+            </animated.button>
+          );
+        })}
       </div>
       <div className="flex-1 flex justify-center">
-      <img className="floating-two" src={ImgBanner} alt="banner" width="100%"/>
-      </div> 
-         </div>
+        <img
+          className="floating-two"
+          src={ImgBanner}
+          alt="banner"
+          width="100%"
+        />
+      </div>
+    </div>
   );
 }

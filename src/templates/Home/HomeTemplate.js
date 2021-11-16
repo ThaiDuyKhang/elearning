@@ -34,7 +34,7 @@ export default function HomeTemplate (props){
         return (
           <Fragment>
             <Navbar toggle={toggle} {...propsRoute} />
-            <SubMenuDropdown isOpen={isOpen} toggle={toggle} />
+            <SubMenuDropdown isOpen={isOpen}  toggle={toggle} />
             <Component {...propsRoute} />
             <Footer  {...propsRoute} />
           </Fragment>

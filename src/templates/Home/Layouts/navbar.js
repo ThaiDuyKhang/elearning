@@ -34,81 +34,85 @@ export default function Navbar({ toggle }) {
 
   const renderSignIn = () => {
     if (_.isEmpty(userSignIn)) {
-      return <div className="inline-flex mx-2">
-        <button
-          className="signin-btn px-4 py-2 text-lg mr-2  rounded-md"
-          onClick={() => {
-            setShowModal(!showModal);
-          }}
-        >
-          {t("Sign In")}
-        </button>
-        {showModal && (
-          <SignInModal setShowModal={setShowModal} showModal={showModal} />
-        )}
-        <NavLink
-          activeClassName="active"
-          className="hover:shadow-xl font-normal text-lg signup-btn px-4 py-3 rounded-md"
-          to="/signup"
-        >
-          {t("Sign Up")}
-        </NavLink>
-      </div>;
+      return (
+        <div className="lg:inline-flex mx-2 hidden">
+          <button
+            className="text-main-500 w-full px-4 py-2 lg:text-md xl:text-lg mr-2 rounded-md ring-1 ring-main-500 hover:bg-main-500 hover:text-white transition-colors duration-150"
+            onClick={() => {
+              setShowModal(!showModal);
+            }}
+          >
+            {t("Sign In")}
+          </button>
+          {showModal && (
+            <SignInModal setShowModal={setShowModal} showModal={showModal} />
+          )}
+          <Link
+            activeClassName="active"
+            className="w-full text-center font-normal hover:shadow-xl lg:text-md xl:text-lg px-4 py-2 rounded-md bg-main-500 text-white hover:text-white"
+            to="/signup"
+          >
+            {t("Sign Up")}
+          </Link>
+        </div>
+      );
+    } else {
+      return (
+        <div className="inline-flex group mx-2 relative">
+          <button
+            onClick={() => {
+              history.push("/about");
+            }}
+            className="ring-main-500 ring-1 hover:bg-main-500 text-main-500 hover:text-white transition-colors duration-150 px-4 py-2 lg:text-md xl:text-lg relative rounded-md"
+          >
+            Hi! {userSignIn?.taiKhoan}
+          </button>
+          <ul
+            className="bg-white border rounded-lg transform lg:text-md xl:text-lg scale-0 group-hover:scale-100 absolute 
+            transition duration-150 ease-in-out origin-top-right min-w-32"
+            style={{ right: 0, top: 55, padding: 10 }}
+          >
+            <li>
+              <button
+                className="py-2 px-4 block text-black transition duration-200 rounded-md w-full hover:bg-main-500 hover:text-white text-right"
+                onClick={() => {
+                  history.push("/about");
+                }}
+              >
+                Profile
+              </button>
+            </li>
+            <li>
+              <button
+                className="py-2 px-4 block text-black transition duration-200 rounded-md w-full hover:bg-main-500 hover:text-white text-right"
+                onClick={() => {
+                  localStorage.removeItem(USER_SIGNIN);
+                  localStorage.removeItem(TOKEN);
+                  window.location.replace("/");
+                }}
+              >
+                Sign out
+              </button>
+            </li>
+            {userSignIn.taiKhoan !== "khangne" ? (
+              ""
+            ) : (
+              <li>
+                <button
+
+                  className="py-2 px-4 block text-black transition duration-200 rounded-md w-full hover:bg-main-500 hover:text-white text-right"
+                  onClick={() => {
+                    history.push("/admin");
+                  }}
+                >
+                  Dashboard
+                </button>
+              </li>
+            )}
+          </ul>
+        </div>
+      );
     }
-    else 
-    {return (
-      <div className="inline-flex group mx-2">
-        <button
-          onClick={() => {
-            history.push("/about");
-          }}
-          className="signin-btn px-4 py-2 text-lg relative rounded-md"
-        >
-          Hi! {userSignIn?.taiKhoan}
-        </button>
-        <ul
-          className="dropdown-nav bg-white border rounded-lg transform scale-0 group-hover:scale-100 absolute 
-            transition duration-150 ease-in-out origin-top-right min-w-32 text-right"
-            style={{right:"6%"}}
-        >
-          <li>
-            <button
-              activeClassName="active"
-              className="sub-link-menu"
-              onClick={() => {
-                history.push("/about");
-              }}
-            >
-              Profile
-            </button>
-          </li>
-          <li>
-            <button
-              activeClassName="active"
-              className="sub-link-menu"
-              onClick={() => {
-                localStorage.removeItem(USER_SIGNIN);
-                localStorage.removeItem(TOKEN);
-                window.location.replace('/');
-              }}
-            >
-              Sign out
-            </button>
-          </li>
-          { (userSignIn.taiKhoan !== "khangne") ? '' : <li>
-            <button
-              activeClassName="active"
-              className="sub-link-menu"
-              onClick={() => {
-                 history.push('/admin');
-              }}
-            >
-              Dashboard
-            </button>
-          </li>}
-        </ul>
-      </div>
-    );}
   };
 
   const renderTabCateCourses = () => {
@@ -117,7 +121,7 @@ export default function Navbar({ toggle }) {
         <li key={index}>
           <NavLink
             activeClassName="active"
-            className="sub-link-menu my-1"
+            className="sub-link-menu my-1 lg:text-md xl:text-lg py-2 px-4 block text-black transition duration-200 rounded-md w-full;"
             to={`/courses/${cateCourses.maDanhMuc}`}
           >
             {cateCourses.tenDanhMuc}
@@ -128,107 +132,119 @@ export default function Navbar({ toggle }) {
   };
 
   return (
-    <nav
-      className="z-10 flex justify-between items-center w-full h-24 
-      lg:fixed top-0 bg-white text-black font-medium shadow-lg"
+    <div
+      className=" z-10 flex justify-between items-center w-full h-24 
+    lg:fixed top-0 shadow-lg bg-white"
     >
-      <Link to="/" className="pl-8">
-        <img src="/images/logo.png" alt="" width="50%" />
-      </Link>
-      <div className="px-4 cursor-pointer lg:hidden">
-        <i
-          className="fa fa-bars text-2xl"
-          aria-hidden="true"
-          onClick={toggle}
-        />
-      </div>
+      <nav className=" flex justify-between items-center w-full bg-white text-black font-medium">
+        <Link to="/" className="pl-8">
+          <img src="/images/logo.png" alt="" width="50%" />
+        </Link>
+        <div className="px-4 cursor-pointer lg:hidden ml-auto ">
+          <i
+            className="fa fa-bars text-2xl"
+            aria-hidden="true"
+            onClick={toggle}
+          />
+        </div>
 
-      <div className="pr-8 lg:block hidden">
-        <NavLink
-          activeClassName="active"
-          exact={true}
-          className="nav-links"
-          to="/"
-        >
-          {t("Home")}
-        </NavLink>
-        <NavLink activeClassName="active" className="nav-links" to="/about">
-          {t("About")}
-        </NavLink>
-        <div className="group inline-flex">
+        <div className="lg:inline-flex hidden ml-auto">
           <NavLink
             activeClassName="active"
-            className="nav-links group relative"
-            to="/courses"
+            exact={true}
+            className="nav-links mx-1 xl:mx-2 my-4 px-4 p-4 lg:text-md xl:text-lg rounded-md font-medium text-black 
+    hover:shadow-lg transition-colors duration-200"
+            to="/"
           >
-            {t("Courses")}
-            <svg
-              className="w-6 h-6 inline"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
+            {t("Home")}
           </NavLink>
-          <ul
-            className="dropdown-nav bg-white border rounded-md transform scale-0 group-hover:scale-100 absolute 
-            transition duration-150 ease-in-out origin-top min-w-32"
+          <NavLink
+            activeClassName="active"
+            className="nav-links lg:mx-1 xl:mx-2 my-4 px-4 p-4 lg:text-md xl:text-lg rounded-md font-medium text-black 
+    hover:shadow-lg transition-colors duration-200"
+            to="/about"
           >
-            {renderTabCateCourses()}
-          </ul>
+            {t("About")}
+          </NavLink>
+          <div className="group inline-flex">
+            <NavLink
+              activeClassName="active"
+              className="nav-links lg:mx-1 xl:mx-2 my-4 px-4 p-4 lg:text-md xl:text-lg rounded-md font-medium text-black 
+    hover:shadow-lg transition-colors duration-200 group relative flex"
+              to="/courses"
+            >
+              {t("Courses")}
+              <svg
+                className="w-6 h-6 inline"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </NavLink>
+            <ul
+              className="dropdown-nav bg-white border rounded-md transform scale-0 group-hover:scale-100 absolute 
+            transition duration-150 ease-in-out origin-top min-w-32"
+            >
+              {renderTabCateCourses()}
+            </ul>
+          </div>
+          <NavLink
+            activeClassName="active"
+            className="nav-links lg:mx-1 xl:mx-2 my-4 px-4 p-4 lg:text-md xl:text-lg rounded-md font-medium text-black 
+    hover:shadow-lg transition-colors duration-200"
+            to="/instructor"
+          >
+            {t("Instructor")}
+          </NavLink>
+          <NavLink
+            activeClassName="active"
+            className="nav-links lg:mx-1 xl:mx-2 my-4 px-4 p-4 lg:text-md xl:text-lg rounded-md font-medium text-black 
+    hover:shadow-lg transition-colors duration-200"
+            to="/gallery"
+          >
+            {t("Gallery")}
+          </NavLink>
+          <NavLink
+            activeClassName="active"
+            className="nav-links lg:mx-1 xl:mx-2 my-4 px-4 p-4 lg:text-md xl:text-lg rounded-md font-medium text-black 
+    hover:shadow-lg transition-colors duration-200"
+            to="/contact"
+          >
+            {t("Contact")}
+          </NavLink>
         </div>
-        <NavLink
-          activeClassName="active"
-          className="nav-links"
-          to="/instructor"
-        >
-          {t("Instructor")}
-        </NavLink>
-        <NavLink
-          activeClassName="active"
-          className="nav-links"
-          to="/gallery"
-        >
-          {t("Gallery")}
-        </NavLink>
-        <NavLink
-          activeClassName="active"
-          className="nav-links"
-          to="/contact"
-        >
-          {t("Contact")}
-        </NavLink>
         {renderSignIn()}
-        <Select
-          defaultValue="en"
-          style={{ width: 70, marginLeft: "0.5rem", border:"none" }}
-          onChange={handleChangeLanguges}
-        >
-          <Option value="en">
-            <img
-              src="/images/en.svg"
-              className="inline-flex"
-              alt="English"
-              width="30"
-            />
-          </Option>
-          <Option value="vi">
-            <img
-              src="/images/vi.svg"
-              className="inline-flex"
-              alt="Việt Nam"
-              width="30"
-            />
-          </Option>
-        </Select>
-      </div>
-    </nav>
+      </nav>
+      <Select
+        defaultValue="en"
+        style={{ width: 70, marginLeft: "0.5rem", border: "none" }}
+        onChange={handleChangeLanguges}
+      >
+        <Option value="en">
+          <img
+            src="/images/en.svg"
+            className="inline-flex"
+            alt="English"
+            width="30"
+          />
+        </Option>
+        <Option value="vi">
+          <img
+            src="/images/vi.svg"
+            className="inline-flex"
+            alt="Việt Nam"
+            width="30"
+          />
+        </Option>
+      </Select>
+    </div>
   );
 }

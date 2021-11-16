@@ -1,28 +1,12 @@
-.nav-links {
-  @apply mx-2 my-4 px-4 p-4 text-lg rounded-md font-medium text-black 
-    hover:shadow-lg transition-colors duration-200;
+:root{
+  --maincolor: #e96036;
 }
+
 .nav-links:hover,
 .sub-link-menu:hover,
 .active {
-  background-color: #e96036;
+  background-color: var(--maincolor)!important;
   color: white !important;
-}
-
-.signin-btn:hover, .signup-btn {
-  color:#fff!important;
-  background-color: #e96036!important;
-
-  transition: all .2s;
-}
-.signin-btn{
-  color:#e96036!important;
-  border: 1px solid #e96036 !important;
-  background-color: #fff !important;
-  transition: all .2s;
-}
-.sub-link-menu {
-  @apply py-2 px-4 block text-lg text-black transition duration-200 rounded-md w-full;
 }
 
 .dropdown-nav {
@@ -31,7 +15,6 @@
   position: absolute;
   top: 80px;
   list-style: none;
-
 }
 
 .nav-links > ul {

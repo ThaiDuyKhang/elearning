@@ -19,7 +19,7 @@ export default function Footer() {
     return arrCateCourse?.map((cateCourses, index) => {
       return (
         <li key={index}>
-          <Link to={`/courses/${cateCourses.maDanhMuc}`}>{cateCourses.tenDanhMuc}</Link>
+          <Link className="text-base sm:text-lg" to={`/courses/${cateCourses.maDanhMuc}`}>{cateCourses.tenDanhMuc}</Link>
         </li>
       );
     });
@@ -30,7 +30,7 @@ export default function Footer() {
       <div className="container">
         <LazyLoad>
           <div
-            className="py-16 mb-24 flex justify-center rounded-3xl"
+            className="py-10 sm:py-16 px-5 mt-10 sm:mt-0 sm:px-0 mb-12 sm:mb-24 mx-5 sm:mx-0 flex justify-center rounded-3xl"
             style={{
               backgroundImage: 'url("/images/bgNewsletter.png")',
               backgroundPosition: "center center",
@@ -40,16 +40,16 @@ export default function Footer() {
             }}
           >
             <div className="text-center">
-              <h2 className="text-5xl text-white font-semibold leading-tight">
+              <h2 className="text-2xl sm:text-5xl text-white font-semibold leading-tight">
                 Subscribe For Get Update
                 <br />
                 Every New Courses
               </h2>
-              <p className="text-xl text-gray-400 leading-normal">
+              <p className="text-base sm:text-xl text-gray-400 leading-normal">
                 20k+ students daily learn with Cybersoft. Subscribe for new courses.
               </p>
               <form>
-              <div className="mt-24 flex flex-row">
+              <div className="mt-10 sm:mt-24 flex flex-row">
                 <input
                   type="email"
                   placeholder="example@email.com"
@@ -57,8 +57,7 @@ export default function Footer() {
                 />
                 <button
                   type="submit"
-                  className="
-                bg-purple-600 hover:bg-purple-700 text-white font-semibold text-base p-5 rounded-r-lg transition-colors
+                  className="bg-purple-600 hover:bg-purple-700 text-white font-semibold text-base p-5 rounded-r-lg transition-colors
                 w-2/5 sm:w-1/3 dark:bg-violet-400 dark:text-coolGray-900"
                 >
                   Subscribe
@@ -74,17 +73,16 @@ export default function Footer() {
           <div className="lg:w-1/3">
             <a
               href="/"
-              className="flex justify-center space-x-3 lg:justify-start"
+              className="flex  justify-start sm:justify-center space-x-3 lg:justify-start"
             >
-              <div className="flex items-center justify-center rounded-full dark:bg-violet-400">
-                <img src="/images/logo.png" alt="" width="80%" />
+              <div className="flex items-center justify-start sm:justify-center rounded-full dark:bg-violet-400">
+                <img className="w-3/4 sm:w-4/5"src="/images/logo.png" alt=""/>
               </div>
-              {/* <span className="self-center text-2xl font-semibold">Brand name</span> */}
             </a>
           </div>
           <div className="footer_links grid grid-cols-2 text-lg gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
             <div className="footer_links_course space-y-3">
-              <h3 className="font-bold text-2xl tracking-wide uppercase dark:text-coolGray-50">
+              <h3 className="font-bold text-lg sm:text-2xl tracking-wide uppercase dark:text-coolGray-50">
                 Courses
               </h3>
               <ul className="space-y-1">
@@ -92,10 +90,10 @@ export default function Footer() {
               </ul>
             </div>
             <div className="footer_links_community space-y-3">
-              <h3 className="font-bold text-2xl tracking-wide uppercase dark:text-coolGray-50">
+              <h3 className="font-bold  text-lg sm:text-2xl tracking-wide uppercase dark:text-coolGray-50">
                 Community
               </h3>
-              <ul className="space-y-1">
+              <ul className="space-y-1 text-base sm:text-lg">
                 <li>
                   <a href="#~">Learners</a>
                 </li>
@@ -117,10 +115,10 @@ export default function Footer() {
               </ul>
             </div>
             <div className="footer_links_quick space-y-3">
-              <h3 className="font-bold text-2xl uppercase dark:text-coolGray-50">
+              <h3 className="font-bold  text-lg sm:text-2xl uppercase dark:text-coolGray-50">
                 Quick links
               </h3>
-              <ul className="space-y-1">
+              <ul className="space-y-1 text-base sm:text-lg">
                 <li>
                   <a href="#~">Professional Education</a>
                 </li>
@@ -139,10 +137,10 @@ export default function Footer() {
               </ul>
             </div>
             <div className="space-y-3">
-              <div className="font-bold text-2xl uppercase dark:text-coolGray-50">
+              <div className="font-bold  text-lg sm:text-2xl uppercase dark:text-coolGray-50">
                 Social media
               </div>
-              <div className="flex justify-start space-x-3">
+              <div className="flex justify-start space-x-2">
                 <a
                   href="https://fb.com/thaikhang.royal/"
                   title="Facebook"
