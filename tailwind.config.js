@@ -1,6 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 
-
 module.exports = {
   mode: 'jit',
   purge: [
@@ -32,7 +31,7 @@ module.exports = {
   },
   variants: {
     extend: {
-      display: ["group-hover"],
+      display: ["group-hover","group-focus"],
       backgroundColor: ['active'],
       accessibility: ['hover', 'active'],
     },

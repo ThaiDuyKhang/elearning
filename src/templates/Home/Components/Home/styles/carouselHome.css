@@ -1,3 +1,24 @@
+@media (max-width:639px){
+  .hero{
+    margin-top: 5rem;
+  }
+  h1.hero-title{
+    height: 5rem!important;
+    margin-bottom: 2rem!important;
+    text-align: center;
+  }
+  .hero-description {
+    text-align: center;
+  }
+  .hero-explore-btn {
+    margin-top: 6rem;
+    padding: 1.5rem 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    }
+  }
+
+
 .ant-carousel .slick-prev:hover,
 .ant-carousel .slick-next:hover {
   color: rgb(44, 44, 44)!important;

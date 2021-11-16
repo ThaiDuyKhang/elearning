@@ -4,6 +4,7 @@
 
 .nav-links:hover,
 .sub-link-menu:hover,
+.signup-btn-mobile,
 .active {
   background-color: var(--maincolor)!important;
   color: white !important;
@@ -39,13 +40,16 @@
 }
 
 .mobile-menu {
-  @apply grid grid-rows-4 text-center items-center bg-green-500 transition duration-300 ease-in-out text-white;
+  @apply fixed z-10 top-[96px] right-0 w-full grid grid-flow-row auto-rows-max gap-6 pb-8 text-center place-content-center bg-white shadow-xl transition duration-300 ease-in-out text-white;
   transform-origin: top center;
   animation: rotateX 300ms ease-in-out forwards;
 }
+.mobile-menu a{
+color:var(--maincolor);
+}
 .mobile-menu-hide {
   transform-origin: top center;
-  animation: rotateX 300ms ease-in-out forwards;
+  /* animation: rotateX 300ms ease-in-out forwards; */
 }
 .ant-select {
   display: inline-flex!important;

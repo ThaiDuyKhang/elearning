@@ -35,9 +35,10 @@ export default function Navbar({ toggle }) {
   const renderSignIn = () => {
     if (_.isEmpty(userSignIn)) {
       return (
-        <div className="lg:inline-flex mx-2 hidden">
+        <div className="flex ml-auto">
           <button
-            className="text-main-500 w-full px-4 py-2 lg:text-md xl:text-lg mr-2 rounded-md ring-1 ring-main-500 hover:bg-main-500 hover:text-white transition-colors duration-150"
+            className="text-main-500 w-max sm:px-4 sm:py-2 p-3 text-xs lg:text-md xl:text-lg 
+            mr-2 rounded-md ring-1 ring-main-500 hover:bg-main-500 hover:text-white transition-colors duration-150"
             onClick={() => {
               setShowModal(!showModal);
             }}
@@ -49,7 +50,7 @@ export default function Navbar({ toggle }) {
           )}
           <Link
             activeClassName="active"
-            className="w-full text-center font-normal hover:shadow-xl lg:text-md xl:text-lg px-4 py-2 rounded-md bg-main-500 text-white hover:text-white"
+            className="w-max text-center font-normal hover:shadow-xl lg:text-md xl:text-lg sm:px-4 sm:py-2 p-3 text-xs rounded-md bg-main-500 text-white hover:text-white"
             to="/signup"
           >
             {t("Sign Up")}
@@ -63,12 +64,13 @@ export default function Navbar({ toggle }) {
             onClick={() => {
               history.push("/about");
             }}
-            className="ring-main-500 ring-1 hover:bg-main-500 text-main-500 hover:text-white transition-colors duration-150 px-4 py-2 lg:text-md xl:text-lg relative rounded-md"
+            className="ring-main-500 w-max ring-1 place-self-stretch hover:bg-main-500 text-main-500 hover:text-white 
+            transition-colors duration-150 px-4 py-2 lg:text-md xl:text-lg relative rounded-md"
           >
             Hi! {userSignIn?.taiKhoan}
           </button>
           <ul
-            className="bg-white border rounded-lg transform lg:text-md xl:text-lg scale-0 group-hover:scale-100 absolute 
+            className="bg-white border rounded-lg transform lg:text-md xl:text-lg scale-0 group-focus:scale-100 sm:group-hover:scale-100 absolute 
             transition duration-150 ease-in-out origin-top-right min-w-32"
             style={{ right: 0, top: 55, padding: 10 }}
           >
@@ -99,7 +101,6 @@ export default function Navbar({ toggle }) {
             ) : (
               <li>
                 <button
-
                   className="py-2 px-4 block text-black transition duration-200 rounded-md w-full hover:bg-main-500 hover:text-white text-right"
                   onClick={() => {
                     history.push("/admin");
@@ -133,19 +134,14 @@ export default function Navbar({ toggle }) {
 
   return (
     <div
-      className=" z-10 flex justify-between items-center w-full h-24 
+      className="z-10 flex justify-between items-center w-full h-24 
     lg:fixed top-0 shadow-lg bg-white"
     >
-      <nav className=" flex justify-between items-center w-full bg-white text-black font-medium">
-        <Link to="/" className="pl-8">
-          <img src="/images/logo.png" alt="" width="50%" />
-        </Link>
-        <div className="px-4 cursor-pointer lg:hidden ml-auto ">
-          <i
-            className="fa fa-bars text-2xl"
-            aria-hidden="true"
-            onClick={toggle}
-          />
+      <nav className="ml-3 sm:ml-5 flex justify-between items-center w-full bg-white text-black font-medium">
+        <div className="w-1/4 sm:w-2/4">
+          <Link to="/">
+            <img src="/images/logo.png" alt="Cybersoft" />
+          </Link>
         </div>
 
         <div className="lg:inline-flex hidden ml-auto">
@@ -222,29 +218,38 @@ export default function Navbar({ toggle }) {
           </NavLink>
         </div>
         {renderSignIn()}
+        <div className="px-4 cursor-pointer lg:hidden ml-4">
+          <i
+            className="fa fa-bars text-2xl text-main-500"
+            aria-hidden="true"
+            onClick={toggle}
+          />
+        </div>
       </nav>
-      <Select
-        defaultValue="en"
-        style={{ width: 70, marginLeft: "0.5rem", border: "none" }}
-        onChange={handleChangeLanguges}
-      >
-        <Option value="en">
-          <img
-            src="/images/en.svg"
-            className="inline-flex"
-            alt="English"
-            width="30"
-          />
-        </Option>
-        <Option value="vi">
-          <img
-            src="/images/vi.svg"
-            className="inline-flex"
-            alt="Việt Nam"
-            width="30"
-          />
-        </Option>
-      </Select>
+      <div className="hidden sm:inline-flex">
+        <Select
+          defaultValue="en"
+          style={{ width: 70, marginLeft: "0.5rem", border: "none" }}
+          onChange={handleChangeLanguges}
+        >
+          <Option value="en">
+            <img
+              src="/images/en.svg"
+              className="inline-flex"
+              alt="English"
+              width="30"
+            />
+          </Option>
+          <Option value="vi">
+            <img
+              src="/images/vi.svg"
+              className="inline-flex"
+              alt="Việt Nam"
+              width="30"
+            />
+          </Option>
+        </Select>
+      </div>
     </div>
   );
 }
