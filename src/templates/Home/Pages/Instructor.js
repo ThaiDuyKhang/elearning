@@ -34,18 +34,18 @@ export default function Instructor() {
       return (
         <div
           key={index}
-          className="instructor_img relative lg:mb-12 mx-5 px-6 py-12 bg-white rounded-3xl shadow-xl"
+          className="instructor_img relative mb-5 lg:mb-12 mx-3 lg:mx-5 px-3 lg:px-6 py-8 lg:py-12 bg-white rounded-xl lg:rounded-3xl shadow-xl"
         >
           <div className="text-center">
             <Lazyload height={200}>
               <img
                 alt={item.name}
-                className="w-full mb-8 object-cover object-center rounded-lg inline-block"
+                className="w-full mb-4 lg:mb-8 object-cover object-center rounded-lg inline-block"
                 src={item.img}
               />
             </Lazyload>
             <h2
-              className="instructor_name  text-3xl font-bold"
+              className="instructor_name text-xl lg:text-3xl font-bold"
               style={{ color: "#E96036" }}
             >
               {item.name}
@@ -96,16 +96,16 @@ export default function Instructor() {
   return (
     <Fragment>
       <div className="instructor--header w-full">
-        <div className="container py-32">
+      <div className="container px-5 py-8 lg:py-32">
           <p className="mb-5">
             <BreadCrumb />
           </p>
-          <h1 className="text-4xl uppercase">Instructor</h1>
+          <h1 className="text-2xl lg:text-4xl  uppercase">Instructor</h1>
         </div>
       </div>
-      <div className="courses--body my-24">
+      <div className="courses--body my-14">
         <div className="container">
-          <div className="grid grid-cols-4 -m-4">{renderListMentor()}</div>
+          <div className="mx-3 lg:mx-0 grid grid-cols-2 lg:grid-cols-4 -m-4">{renderListMentor()}</div>
         </div>
       </div>
     </Fragment>

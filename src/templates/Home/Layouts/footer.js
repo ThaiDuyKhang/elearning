@@ -40,20 +40,20 @@ export default function Footer() {
             }}
           >
             <div className="text-center">
-              <h2 className="text-2xl sm:text-5xl text-white font-semibold leading-tight">
+              <h2 className="text-xl sm:text-5xl text-white font-semibold leading-tight">
                 Subscribe For Get Update
                 <br />
                 Every New Courses
               </h2>
-              <p className="text-base sm:text-xl text-gray-400 leading-normal">
+              <p className="text-sm sm:text-xl text-gray-400 leading-normal">
                 20k+ students daily learn with Cybersoft. Subscribe for new courses.
               </p>
               <form>
-              <div className="mt-10 sm:mt-24 flex flex-row">
+              <div className="mt-7 sm:mt-24 flex flex-row">
                 <input
                   type="email"
                   placeholder="example@email.com"
-                  className="w-3/5 p-3 rounded-l-lg sm:w-2/3"
+                  className="w-3/5 px-3 py-2 lg:p-3 rounded-l-lg sm:w-2/3"
                 />
                 <button
                   type="submit"

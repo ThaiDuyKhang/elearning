@@ -1,3 +1,14 @@
+@media (max-width: 639px) {
+  .google-login-btn,
+  .facebook-login-btn,
+  .github-login-btn {
+    width: 100% !important;
+  }
+  .instructor--header {
+    margin-top: 0px !important;
+    height: 133px !important;
+  }
+}
 .about svg,
 .instructor_social svg {
   transition: 0.2s all;
@@ -56,13 +67,7 @@
     rgba(10, 3, 60, 0) 100%
   );
 }
-@media (max-width: 639px) {
-  .google-login-btn,
-  .facebook-login-btn,
-  .github-login-btn {
-    width: 100% !important;
-  }
-}
+
 .google-login-btn:hover .google-login {
   border: 1px solid #fff !important;
 }

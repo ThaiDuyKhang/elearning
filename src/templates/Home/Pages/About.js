@@ -6,20 +6,20 @@ import "./Style/StylePages.css";
 
 export default function About() {
   return (
-    <div className="about h-screen flex flex-row justify-center items-center">
-      <div>
+    <div className="about h-screen flex flex-col lg:flex-row justify-center items-center">
+      <div className="order-2 lg:order-1">
         <LazyLoad height={200}>
           <img
             alt="Thái Duy Khang"
-            className="w-full mb-8 mt-24 object-cover object-center rounded-lg inline-block"
+            className="w-full lg:mb-8 mt-10 lg:mt-24 object-cover object-center rounded-lg inline-block"
             style={{ width: 600 }}
             src={thaiduykhang}
           />
         </LazyLoad>
       </div>
-      <div>
+      <div className="order-1 lg:order-2">
         <h1
-          className="text-5xl text-center font-bold leading-normal"
+          className="text-3xl lg:text-5xl text-center font-bold leading-normal"
           style={{ color: "#C97475" }}
         >
           THÁI DUY KHANG

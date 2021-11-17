@@ -1,3 +1,9 @@
+@media (max-width:639px){
+  .courses--header {
+    margin-top: 0px!important;
+    height: 133px!important;
+  }
+}
 .courses--header {
     margin-top: 90px;
     background: url("./../../../../assets/images/header-courses-bg.png");

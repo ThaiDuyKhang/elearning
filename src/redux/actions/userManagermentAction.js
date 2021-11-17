@@ -13,8 +13,9 @@ export const signInAction = (DangNhap, setShowModal) => {
           type: SIGN_IN,
           thongTinDangNhap: result.data,
         });
-        //Redirect to previous page
-        history.goBack();
+
+        history.goForward();
+        // window.location.hash();
         setShowModal(false);
       }
     } catch (error) {
