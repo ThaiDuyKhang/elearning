@@ -29,12 +29,12 @@ export default function SignIn({ setShowModal }) {
   return (
     <Fragment>
       <div
-        className="grid grid-flow-row gap-x-8 px-5 pt-5"
+        className="lg:grid grid-flow-row gap-x-8 px-1 lg:px-5 pt-5"
         style={{ fontFamily: "Arial, Helvetica, sans-serif" }}
       >
-        <div className="w-fit place-self-center">
-          <div className="flex flex-row gap-4">
-            <button className="google-login-btn mt-5 flex items-center text-gray-500 text-base p-5 rounded-lg transition-colors">
+        <div className="lg:w-fit lg:place-self-center">
+          <div className="flex flex-col items-center lg:flex-row gap-2 lg:gap-4">
+            <button className="google-login-btn lg:mt-5 flex items-center text-gray-500 text-sm lg:text-base p-5 rounded-lg transition-colors">
               <svg
                 className="mr-3 google-login rounded-lg"
                 width="40"
@@ -61,9 +61,9 @@ export default function SignIn({ setShowModal }) {
               </svg>
               Sign in with Google
             </button>
-            <button className="facebook-login-btn mt-5 flex items-center text-gray-500 text-base p-5 rounded-lg transition-colors">
+            <button className="facebook-login-btn lg:mt-5 flex items-center text-gray-500 text-sm lg:text-base p-5 rounded-lg transition-colors">
               <svg
-                className="mr-3 facebook-login rounded-lg"
+                className="mr-3 facebook-login  rounded-lg"
                 xmlns="http://www.w3.org/2000/svg"
                 width="40"
                 height="40"
@@ -88,7 +88,7 @@ export default function SignIn({ setShowModal }) {
               </svg>
               Sign in with Facebook
             </button>
-            <button className="github-login-btn mt-5 flex items-center text-gray-500 text-base p-5 rounded-lg transition-colors">
+            <button className="github-login-btn lg:mt-5 flex items-center text-gray-500 text-sm lg:text-base p-5 rounded-lg transition-colors">
               <svg
                 className="mr-3 github-login rounded-lg"
                 xmlns="http://www.w3.org/2000/svg"
@@ -113,7 +113,7 @@ export default function SignIn({ setShowModal }) {
               Sign in with Github
             </button>
           </div>
-          <p className="my-8 text-center text-base text-gray-500 ">
+          <p className="mt-4 mb-8 lg:my-8 text-center text-sm lg:text-base text-gray-500 ">
             - Or signin with your email -
           </p>
         </div>
@@ -127,14 +127,14 @@ export default function SignIn({ setShowModal }) {
                 name="taiKhoan"
                 value={formik.values.taiKhoan}
                 onChange={formik.handleChange}
-                className="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-red-500"
+                className="w-full text-base lg:text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-red-500"
               />
 
               {formik.errors.taiKhoan && formik.touched.taiKhoan && (
                 <p className="text-red-600">{formik.errors.taiKhoan}</p>
               )}
             </div>
-            <div className="mt-8 passwordSignIn">
+            <div className="mt-4 lg:mt-8 passwordSignIn">
               <div className="flex justify-between items-center">
                 <div className="text-sm font-bold text-gray-700 tracking-wide">
                   Password
@@ -145,13 +145,13 @@ export default function SignIn({ setShowModal }) {
                 name="matKhau"
                 value={formik.values.matKhau}
                 onChange={formik.handleChange}
-                className=" w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-red-500"
+                className=" w-full text-base lg:text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-red-500"
               />
               {formik.errors.matKhau && formik.touched.matKhau && (
                 <p className="text-red-600">{formik.errors.matKhau}</p>
               )}
             </div>
-            <div className="mt-10">
+            <div className="mt-5 lg:mt-10">
               <button
                 className="text-gray-100 p-4 w-full rounded-full tracking-wide
                           font-semibold font-display focus:outline-none focus:shadow-outline
@@ -162,8 +162,8 @@ export default function SignIn({ setShowModal }) {
               </button>
             </div>
           </form>
-          <div className="mt-8 text-sm font-display font-semibold text-gray-700 text-center">
-            <div className="mb-5">
+          <div className="mt-8 text-sm font-display text-gray-700 text-center">
+            <div className="mb-2 lg:mb-5">
               <a
                 href="#!"
                 className="text-md font-semibold cursor-pointer"
@@ -178,14 +178,14 @@ export default function SignIn({ setShowModal }) {
                 onClick={() => {
                   history.push("/signup");
                 }}
-                className="cursor-pointer"
+                className="cursor-pointer font-semibold "
                 style={{ color: "#E96036" }}
               >
                 Sign up
               </button>
             </div>
             <div>
-              <p className="my-8 border-t-2 text-center font-normal text-base pt-5">
+              <p className="my-4 lg:my-8 border-t-2 text-center font-normal text-xs lg:text-base pt-5">
                 - Sign in to admin dashboard with -
               <br/>Username: <span style={{color:"#E96036"}}>khangne</span> - Password: <span style={{color:"#E96036"}}>123456</span></p>
             </div>

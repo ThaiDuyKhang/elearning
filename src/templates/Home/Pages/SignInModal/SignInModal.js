@@ -16,8 +16,8 @@ export default function SignInModal({ showModal, setShowModal }) {
         onCancel={() => setShowModal(false)}
         footer={null}
       >
-        <div className="grid grid-flow-col grid-cols-12 gap-x-8 justify-center  pt-5 px-5 relative">
-          <div className="welcome-modal place-self-center col-span-5 pr-10">
+        <div className="lg:grid grid-flow-row lg:grid-flow-col lg:grid-cols-12 lg:gap-x-8 justify-content-center lg:pt-5 lg:px-5 relative">
+          <div className="welcome-modal hidden lg:inline-flex place-self-center col-span-5 pr-10">
             <LazyLoad>
               <LogoModal/>
               <img
@@ -28,7 +28,7 @@ export default function SignInModal({ showModal, setShowModal }) {
               />
             </LazyLoad>
           </div>
-          <div className="line-modal col-span-1 w-fit"></div>
+          <div className="line-modal col-span-1 w-fit hidden lg:inline-flex"></div>
           <div className="col-span-6">
            <SignIn setShowModal={setShowModal}/>
           </div>

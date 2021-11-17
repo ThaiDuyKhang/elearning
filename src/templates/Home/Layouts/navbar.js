@@ -59,18 +59,21 @@ export default function Navbar({ toggle }) {
       );
     } else {
       return (
-        <div className="inline-flex group mx-2 relative">
+        <div className="inline-flex group ml-auto sm:mx-2 relative">
           <button
-            onClick={() => {
-              history.push("/about");
-            }}
-            className="ring-main-500 w-max ring-1 place-self-stretch hover:bg-main-500 text-main-500 hover:text-white 
+            // onClick={() => {
+            //   history.push("/about");
+            // }}
+            id="user-menu"
+            className=" ring-main-500 w-max ring-1 place-self-stretch hover:bg-main-500 text-main-500 hover:text-white 
             transition-colors duration-150 px-4 py-2 lg:text-md xl:text-lg relative rounded-md"
           >
             Hi! {userSignIn?.taiKhoan}
           </button>
+
           <ul
-            className="bg-white border rounded-lg transform lg:text-md xl:text-lg scale-0 group-focus:scale-100 sm:group-hover:scale-100 absolute 
+            id="user-menu-dropdown"
+            className=" bg-white z-10 border rounded-lg transform lg:text-md xl:text-lg scale-0 focus:scale-100 sm:group-hover:scale-100 absolute 
             transition duration-150 ease-in-out origin-top-right min-w-32"
             style={{ right: 0, top: 55, padding: 10 }}
           >
@@ -138,13 +141,13 @@ export default function Navbar({ toggle }) {
     lg:fixed top-0 shadow-lg bg-white"
     >
       <nav className="ml-3 sm:ml-5 flex justify-between items-center w-full bg-white text-black font-medium">
-        <div className="w-1/4 sm:w-2/4">
+        <div className="lg:flex-none">
           <Link to="/">
-            <img src="/images/logo.png" alt="Cybersoft" />
+            <img className="w-3/5" src="/images/logo.png" alt="Cybersoft" />
           </Link>
         </div>
 
-        <div className="lg:inline-flex hidden ml-auto">
+        <div className="lg:inline-flex hidden lg:flex-grow justify-end ml-auto">
           <NavLink
             activeClassName="active"
             exact={true}
@@ -226,7 +229,7 @@ export default function Navbar({ toggle }) {
           />
         </div>
       </nav>
-      <div className="hidden sm:inline-flex">
+      <div className="hidden sm:inline-flex lg:flex-none">
         <Select
           defaultValue="en"
           style={{ width: 70, marginLeft: "0.5rem", border: "none" }}

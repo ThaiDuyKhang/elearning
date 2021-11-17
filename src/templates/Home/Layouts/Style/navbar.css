@@ -1,12 +1,29 @@
-:root{
+:root {
   --maincolor: #e96036;
+}
+@media (max-width: 639px) {
+  #user-menu ~ #user-menu-dropdown {
+    transform: scaleX(0) scaleY(0);
+    transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+    transition-duration: 75ms;
+    opacity: 0;
+    top: 3.25rem;
+  }
+
+  #user-menu ~ #user-menu-dropdown:focus-within,
+  #user-menu:focus ~ #user-menu-dropdown {
+    transform: scaleX(1) scaleY(1);
+    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    transition-duration: 100ms;
+    opacity: 1;
+  }
 }
 
 .nav-links:hover,
 .sub-link-menu:hover,
 .signup-btn-mobile,
 .active {
-  background-color: var(--maincolor)!important;
+  background-color: var(--maincolor) !important;
   color: white !important;
 }
 
@@ -44,32 +61,33 @@
   transform-origin: top center;
   animation: rotateX 300ms ease-in-out forwards;
 }
-.mobile-menu a{
-color:var(--maincolor);
+.mobile-menu a {
+  color: var(--maincolor);
 }
 .mobile-menu-hide {
   transform-origin: top center;
   /* animation: rotateX 300ms ease-in-out forwards; */
 }
 .ant-select {
-  display: inline-flex!important;
-  vertical-align: middle!important;
+  display: inline-flex !important;
+  vertical-align: middle !important;
 }
 .ant-select:not(.ant-select-disabled):hover .ant-select-selector,
-.ant-select-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input) .ant-select-selector,
-.ant-select:not(.ant-select-customize-input) .ant-select-selector{
-  border:none!important;
-  box-shadow: none!important;
-background-color: transparent!important;
+.ant-select-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input)
+  .ant-select-selector,
+.ant-select:not(.ant-select-customize-input) .ant-select-selector {
+  border: none !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
 }
-.ant-select-item-option{
-  display: block!important;
+.ant-select-item-option {
+  display: block !important;
 }
 .ant-select-item-option-content {
-  flex: unset!important;
-  display: flex!important;
-  justify-content: center!important;
-  align-items: center!important;
+  flex: unset !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
 }
 
 @keyframes rotateX {
