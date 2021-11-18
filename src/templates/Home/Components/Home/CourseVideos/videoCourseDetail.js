@@ -20,8 +20,8 @@ export default function VideoCoursesDetail(props) {
           }}
           className={` ${
             activeCourse === index
-              ? "activeCourse video_playlist_course w-max origin-left flex lg:px-3 py-4"
-              : "video_playlist_course w-max origin-left flex lg:px-3 py-4"
+              ? "activeCourse video_playlist_course w-full origin-left flex p-2 lg:px-3 lg:py-4"
+              : "video_playlist_course w-full origin-left flex p-2 lg:px-3 lg:py-4"
           } `}
         >
           <img

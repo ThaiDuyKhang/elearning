@@ -15,7 +15,7 @@
 .video_playlist_course {
   transition: 0.2s ease-in-out;
   border-radius: 10px;
-  width: 85%;
+  /* width: 85%; */
 }
 .activeCourse{
   overflow-x: hidden;
