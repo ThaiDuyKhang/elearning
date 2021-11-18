@@ -59,9 +59,11 @@ export default function Navbar({ toggle }) {
       );
     } else {
       return (
-        <div className="inline-flex group ml-auto sm:mx-2 relative">
+        <div
+          tabindex="0"
+          className="inline-flex group ml-auto sm:mx-2 relative"
+        >
           <button
-            tabindex="0"
             id="user-menu"
             className=" ring-main-500 w-max ring-1 place-self-stretch hover:bg-main-500 text-main-500 hover:text-white 
             transition-colors duration-150 px-4 py-2 lg:text-md xl:text-lg relative rounded-md"
