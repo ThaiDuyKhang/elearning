@@ -35,9 +35,9 @@ export default function Courses(props) {
       );
       return (
         <TabPane tab={cateCourses.tenDanhMuc} key={index}>
-          <section className="text-gray-600 body-font mx-5 ">
+          <div className="text-gray-600 body-font mx-5 ">
             <div className="container mb-8 lg:mb-12 sm:mb-0 py-8 sm:py-16 px-3 mx-auto">
-              <div className="grid grid-cols-2 sm:grid-cols-4 -m-4">
+              <div className="grid grid-cols-2 lg:grid-cols-4 -m-4">
                 {courseByCate.slice(0, 8).map((course, index) => {
                   return (
                     <div
@@ -76,7 +76,7 @@ export default function Courses(props) {
                             history.push(`/courses/detail/${course.maKhoaHoc}`);
                           }}
                           className="mx-auto cursor-pointer w-fit mt-4 ring-1 ring-purple-700 text-purple-700 bg-white hover:text-white hover:bg-purple-700 
-                        font-semibold text-sm sm:text-base px-5 py-3 rounded-lg transition-colors"
+                        lg:font-semibold text-sm sm:text-base px-5 py-3 rounded-lg transition-colors"
                         >
                           Class Details
                         </div>
@@ -96,7 +96,7 @@ export default function Courses(props) {
               Visit More Classes
             </button>
             </div>
-          </section>
+          </div>
         </TabPane>
       );
     });
@@ -106,7 +106,7 @@ export default function Courses(props) {
     <Fragment>
       <div className="courses--header w-full">
         <div className="container px-5 py-8 lg:py-32">
-          <p className="mb-5">
+          <p className="hidden lg:block mb-5">
             <BreadCrumb />
           </p>
           <h1 className="text-2xl lg:text-4xl uppercase">Courses</h1>

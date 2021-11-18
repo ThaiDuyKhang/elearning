@@ -75,7 +75,7 @@ export default function TabCoursesHome(props) {
                             history.push(`/courses/detail/${course.maKhoaHoc}`);
                           }}
                           className="mx-auto cursor-pointer w-fit mt-4 ring-1 ring-purple-700 text-purple-700 bg-white hover:text-white hover:bg-purple-700 
-                          font-semibold text-sm sm:text-base px-5 py-3 rounded-lg transition-colors"
+                          lg:font-semibold text-sm sm:text-base px-5 py-3 rounded-lg transition-colors"
                         >
                           Class Details
                         </div>

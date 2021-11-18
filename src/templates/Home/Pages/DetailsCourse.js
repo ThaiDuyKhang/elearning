@@ -43,7 +43,7 @@ export default function DetailsCourse(props) {
         return (
           <div
             key={index}
-            className="courses_tab_home relative lg:mb-12 mx-5 px-6 py-12 bg-white rounded-3xl shadow-xl"
+            className="courses_tab_home relative lg:mb-12 mx-5 px-3 lg:px-6 py-6 lg:py-12 bg-white rounded-3xl shadow-xl"
           >
             <div className="absolute top-0 left-0"></div>
             <p className="rounded-lg mb-8 text-center text-purple-700 bg-indigo-100 py-2 px-3 w-fit text-xs">
@@ -54,14 +54,18 @@ export default function DetailsCourse(props) {
                 <img
                   alt={course?.tenKhoaHoc}
                   className="w-full mb-8 object-cover object-center rounded-lg inline-block "
-                  style={{ maxHeight: "150px", minHeight: "150px", border:"1px solid #eee" }}
+                  style={{
+                    maxHeight: "150px",
+                    minHeight: "150px",
+                    border: "1px solid #eee",
+                  }}
                   src={course?.hinhAnh}
                 />
               </LazyLoad>
-              <h2 className="courses_tab_home_heading  text-3xl font-bold">
+              <h2 className="courses_tab_home_heading text-xl lg:text-3xl font-bold">
                 {course?.tenKhoaHoc}
               </h2>
-              <p className="course_tab_home_description text-lg text-gray-500 leading-relaxed">
+              <p className="course_tab_home_description text-md lg:text-lg text-gray-500 leading-relaxed">
                 {course?.moTa?.length > 100 ? (
                   <span>{course?.moTa?.slice(0, 90)}...</span>
                 ) : (
@@ -70,9 +74,10 @@ export default function DetailsCourse(props) {
               </p>
               <button
                 onClick={() => {
-                    history.push(`/courses/detail/${course.maKhoaHoc}`);
+                  history.push(`/courses/detail/${course.maKhoaHoc}`);
                 }}
-                className="mx-auto cursor-pointer w-fit mt-4 border-2 border-purple-700 text-purple-700 bg-white hover:text-white hover:bg-purple-700 font-semibold text-base px-5 py-3 rounded-lg transition-colors"
+                className="mx-auto cursor-pointer w-fit mt-4 ring-1 ring-purple-700 text-purple-700 bg-white
+                 hover:text-white hover:bg-purple-700 lg:font-semibold text-md lg:text-base px-5 py-3 rounded-lg transition-colors"
               >
                 Class Details
               </button>
@@ -84,7 +89,7 @@ export default function DetailsCourse(props) {
 
   return (
     <Fragment>
-      <div className="container mt-4 lg:mt-40">
+      <div className="container mt-4 lg:mt-40 overflow-hidden">
         <div className="text-center flex flex-col items-center">
           <p className="mb-12">
             <Breadcrumbs />
@@ -95,63 +100,67 @@ export default function DetailsCourse(props) {
           >
             {courseDetail?.danhMucKhoaHoc?.tenDanhMucKhoaHoc}
           </p>
-          <h1 className="text-3xl lg:text-5xl font-bold mt-0 lg:mt-6" >{courseDetail.tenKhoaHoc}</h1>
+          <h1 className="text-2xl lg:text-5xl font-bold mt-0 lg:mt-6">
+            {courseDetail.tenKhoaHoc}
+          </h1>
         </div>
         <VideoCoursesDetail />
 
-        <div className="pt-24 grid grid-flow-col grid-cols-12 gap-4">
-          <div className="img_collegeLevel_home col-span-9">
-            <h2 className="text-5xl mb-10 font-bold leading-tight">Course Details</h2>
-            <p className="text-xl pr-12 text-justify">{courseDetail.moTa}</p>
+        <div className=" mx-3 mt-8 lg:mt-24 grid lg:grid-flow-col lg:grid-cols-12 gap-4">
+          <div className="img_collegeLevel_home col-span-12 lg:col-span-9">
+            <h2 className="font-body text-2xl lg:text-5xl mb-3 lg:mb-10 font-bold leading-tight">
+              Course Details
+            </h2>
+            <p className="text-md lg:text-xl lg:pr-12 text-justify">
+              {courseDetail.moTa}
+            </p>
           </div>
-          <div className="col-span-3 grid grid-flow-row row-span-2 sticky top-10 bg-white shadow-xl rounded-lg p-5">
+          <div className="col-span-12 lg:col-span-3 grid grid-flow-row row-span-2 sticky top-10 bg-white shadow-xl rounded-lg p-5">
             <div className="grid grid-flow-col grid-cols-6 grid-rows-9">
-              <div className="col-span-3 flex flex-col gap-4 items-start justify-between">
-                <p className="text-lg font-semibold text-gray-500">Price</p>
-                <p className="text-lg font-semibold text-gray-500">
-                  Instructor
-                </p>
-                <p className="text-lg font-semibold text-gray-500">Ratings</p>
-                <p className="text-lg font-semibold text-gray-500">Durations</p>
-                <p className="text-lg font-semibold text-gray-500">Lessions</p>
-                <p className="text-lg font-semibold text-gray-500">Quizzes</p>
-                <p className="text-lg font-semibold text-gray-500">
-                  Certificate
-                </p>
-                <p className="text-lg font-semibold text-gray-500">Language</p>
-                <p className="text-lg font-semibold text-gray-500">Access</p>
+              <div className="text-md lg:text-lg lg:font-semibold text-gray-500 col-span-3 flex flex-col lg:gap-4 items-start justify-between">
+                <p>Price</p>
+                <p>Instructor</p>
+                <p>Ratings</p>
+                <p>Durations</p>
+                <p>Lessions</p>
+                <p>Quizzes</p>
+                <p>Certificate</p>
+                <p>Language</p>
+                <p>Access</p>
               </div>
-              <div className="col-span-3 gap-4 text-right flex flex-col items-end justify-between">
-                <p className="text-lg font-semibold text-red-500">Free</p>
-                <p className="text-lg font-semibold text-black underline">
+              <div className="text-md lg:text-lg lg:font-semibold  text-black col-span-3 lg:gap-4 text-right flex flex-col items-end justify-between">
+                <p className=" text-red-500">Free</p>
+                <p className="text-black underline">
                   {courseDetail?.nguoiTao?.hoTen}
                 </p>
-                <div style={{ padding: "5px 0 15px 0" }} className="block">
+                <div className="block"
+                //  style={{padding: "5px 0 15px 0"}}
+                >
                   <RatingsDetailsCourse />
                 </div>
-                <p className="text-lg font-semibold text-black">5 Days</p>
-                <p className="text-lg font-semibold text-black">10</p>
-                <p className="text-lg font-semibold text-black">2</p>
-                <p className="text-lg font-semibold text-black">Yes</p>
-                <p className="text-lg font-semibold text-black">Vietnamese</p>
-                <p className="text-lg font-semibold text-black">Lifetime</p>
+                <p>5 Days</p>
+                <p>10</p>
+                <p>2</p>
+                <p>Yes</p>
+                <p>Vietnamese</p>
+                <p>Lifetime</p>
               </div>
             </div>
             <NavLink
               to={`/checkout/${courseDetail.maKhoaHoc}`}
               className="text-white hover:text-white font-semibold text-base"
             >
-              <div className="mt-5 w-full text-center bg-purple-600 hover:bg-purple-700  p-5 rounded-lg transition-colors">
+              <div className="lg:mt-5 text-md lg:text-base w-full text-center bg-purple-600 hover:bg-purple-700 p-3 lg:p-5 rounded-lg transition-colors">
                 Enroll
               </div>
             </NavLink>
           </div>
         </div>
-        <div className="related-course">
-          <h2 className="text-5xl mt-14 mb-10 font-bold leading-tight">
+        <div className="related-course mx-3">
+          <h2 className="text-2xl lg:text-5xl mt-14 mb-10 font-bold leading-tight">
             Similar Courses
           </h2>
-          <div className="grid grid-cols-4 -m-4">{renderSimilarCourse()}</div>
+          <div className="grid grid-cols-2 lg:grid-cols-4 -m-4">{renderSimilarCourse()}</div>
         </div>
       </div>
     </Fragment>

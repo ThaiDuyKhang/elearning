@@ -1,4 +1,9 @@
-
+@media (max-width:639px){
+  
+.rating {
+  height: 20px;
+}
+}
 .rating {
     display: inline-flex;
     width: 60%;

@@ -58,8 +58,10 @@ export default function VideoCoursesDetail(props) {
   return (
     <div
       className="dark:bg-coolGray-800 dark:text-coolGray-100 mt-4 lg:mt-12">
-      <div className="container lg:grid lg:grid-cols-12  gap-2 md:gap-10 mt-6 mx-3 lg:mx-auto lg:mt-16 p-4  lg:p-10 rounded-2xl bg-gray-100">
-        <div className="relative rounded-2xl bg-gray-100 flex flex-col col-span-12 bg-center bg-no-repeat bg-cover dark:bg-coolGray-500 xl:col-span-8 lg:col-span-7 md:col-span-9 min-h-96">
+      <div className="container lg:grid lg:grid-cols-12  gap-2 md:gap-10 mt-6 lg:mx-auto lg:mt-16 p-4  lg:p-10 lg:rounded-2xl bg-gray-100">
+        <div className="relative lg:rounded-2xl bg-gray-100 flex flex-col col-span-12 
+        bg-center bg-no-repeat bg-cover dark:bg-coolGray-500 xl:col-span-8 
+        lg:col-span-7 md:col-span-9 min-h-96">
 
           <div className="video-responsive">
           
@@ -75,7 +77,7 @@ export default function VideoCoursesDetail(props) {
           </div>
         </div>
         <div className="lg:col-span-4 lg:block">
-          <p className="font-semibold mt-3 lg:mt-0 text-lg lg:text-2xl lg:pl-3 text-black">
+          <p className="font-semibold mt-3 lg:mt-0 text-lg lg:text-2xl lg:pl-3 text-gray-500 lg:text-black">
             Courses playlist
           </p>
           <div
