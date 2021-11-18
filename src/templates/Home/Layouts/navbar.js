@@ -70,7 +70,6 @@ export default function Navbar({ toggle }) {
           </button>
 
           <ul
-            tabindex="0"
             id="user-menu-dropdown"
             className=" bg-white z-10 border rounded-lg transform lg:text-md xl:text-lg scale-0 focus:scale-100 sm:group-hover:scale-100 absolute 
             transition duration-150 ease-in-out origin-top-right min-w-32"

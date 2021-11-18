@@ -20,18 +20,19 @@ export default function VideoCoursesDetail(props) {
           }}
           className={` ${
             activeCourse === index
-              ? "activeCourse video_playlist_course origin-left flex px-3 py-4"
-              : "video_playlist_course origin-left flex px-3 py-4"
+              ? "activeCourse video_playlist_course w-max origin-left flex lg:px-3 py-4"
+              : "video_playlist_course w-max origin-left flex lg:px-3 py-4"
           } `}
         >
           <img
             alt=""
-            className="rounded-lg flex-shrink-0 object-cover w-20 h-20 mr-4 dark:bg-coolGray-500"
+            className="rounded-lg flex-shrink-0 object-cover w-14 h-14 
+            lg:w-20 lg:h-20 mr-4 dark:bg-coolGray-500"
             src="/images/thumbnailvideo.jpg"
           />
           <div className="flex flex-col flex-grow">
             <h3
-              className="font-body font-semibold text-lg text-black"
+              className="font-body font-semibold text-md lg:text-lg text-black"
             >
               {video.title}
             </h3>
@@ -56,10 +57,8 @@ export default function VideoCoursesDetail(props) {
 
   return (
     <div
-      className="dark:bg-coolGray-800 dark:text-coolGray-100"
-      style={{ marginTop: 50 }}
-    >
-      <div className="container grid grid-cols-12 mx-auto gap-2 md:gap-10 mt-16 p-10 rounded-2xl bg-gray-100">
+      className="dark:bg-coolGray-800 dark:text-coolGray-100 mt-4 lg:mt-12">
+      <div className="container lg:grid lg:grid-cols-12  gap-2 md:gap-10 mt-6 mx-3 lg:mx-auto lg:mt-16 p-4  lg:p-10 rounded-2xl bg-gray-100">
         <div className="relative rounded-2xl bg-gray-100 flex flex-col col-span-12 bg-center bg-no-repeat bg-cover dark:bg-coolGray-500 xl:col-span-8 lg:col-span-7 md:col-span-9 min-h-96">
 
           <div className="video-responsive">
@@ -75,12 +74,12 @@ export default function VideoCoursesDetail(props) {
             />
           </div>
         </div>
-        <div className="lg:col-span-4 md:hidden lg:block">
-          <p className="font-semibold text-2xl pl-3 text-black">
+        <div className="lg:col-span-4 lg:block">
+          <p className="font-semibold mt-3 lg:mt-0 text-lg lg:text-2xl lg:pl-3 text-black">
             Courses playlist
           </p>
           <div
-            className="video_playlist overflow-y-scroll hidden pb-10 lg:col-span-4 md:hidden lg:block"
+            className="video_playlist pr-8 overflow-y-scroll lg:pb-10 lg:col-span-4 lg:block"
             style={{ height: 555 }}
           >
             <div className=" flex flex-col pl-1">
@@ -88,7 +87,7 @@ export default function VideoCoursesDetail(props) {
             </div>
           </div>
         </div>
-        <div className="justify-self-start col-span-8">
+        <div className="justify-self-start col-span-8 hidden lg:block">
           <h2 className=" font-semibold text-2xl" style={{ color: "#7C3AED" }}>
             {state.videoList.title}
           </h2>

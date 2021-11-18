@@ -84,18 +84,18 @@ export default function DetailsCourse(props) {
 
   return (
     <Fragment>
-      <div className="container" style={{ marginTop: 160 }}>
+      <div className="container mt-4 lg:mt-40">
         <div className="text-center flex flex-col items-center">
           <p className="mb-12">
             <Breadcrumbs />
           </p>
           <p
-            className=" bg-indigo-100 rounded-md py-2 px-3 w-fit text-lg"
+            className=" bg-indigo-100 rounded-md py-2 px-3 w-fit text-sm lg:text-lg"
             style={{ color: "#7C3AED" }}
           >
             {courseDetail?.danhMucKhoaHoc?.tenDanhMucKhoaHoc}
           </p>
-          <h1 className="text-5xl font-bold mt-6" >{courseDetail.tenKhoaHoc}</h1>
+          <h1 className="text-3xl lg:text-5xl font-bold mt-0 lg:mt-6" >{courseDetail.tenKhoaHoc}</h1>
         </div>
         <VideoCoursesDetail />
 
